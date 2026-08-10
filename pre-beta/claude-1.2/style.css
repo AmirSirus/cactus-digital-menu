@@ -118,16 +118,16 @@ input { font-family: inherit; }
 }
 .brand { display: flex; align-items: center; gap: 12px; }
 .brand__logo {
-  display: grid;
-  place-items: center;
-  width: 52px;
-  height: 52px;
-  border-radius: width:250px ;
-  color: var(--red-soft);
-  background: linear-gradient(145deg, var(--surface-2), var(--surface));
-  border: 1px solid var(--border);
-  box-shadow: 0 0 18px var(--red-glow);
+  height: 40px;          /* ارتفاع ثابت */
+  width: auto;           /* عرض خودش را با نسبت 1.8:1 می‌گیرد */
+  aspect-ratio: 2439 / 1356;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-color, #a10505); /* رنگ لوگو از currentColor */
+  padding: 0;            /* padding قبلی باعث ریز شدن لوگو می‌شد */
 }
+
 .brand__name { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
 .brand__tagline {
   display: block;

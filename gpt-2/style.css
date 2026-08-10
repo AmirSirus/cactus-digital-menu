@@ -120,8 +120,8 @@ img {
 }
 
 .brand__mark {
-width: 58px;
   height: 58px;
+  width: auto;
   /* عرض خودش را از نسبت SVG می‌گیرد */
   display: inline-flex;
   align-items: center;
@@ -129,10 +129,9 @@ width: 58px;
   /* رنگ لوگو از اینجا کنترل می‌شود */
 }
 .brand__logo {
-  width: 100%;
   height: 100%;
-  object-fit: contain;
-  padding: 12px;
+  width: auto;
+  display: block;
 }
 
 .brand__eyebrow {
@@ -145,13 +144,14 @@ width: 58px;
 
 .brand__text h1 {
   margin: 0;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2rem, 1vw, 1rem);
   line-height: 1.1;
+  color:rgb(255, 78, 78);
 }
 
 .brand__subtitle {
   margin: 6px 0 0;
-  color: var(--muted);
+  color: rgb(255, 103, 134);
   font-size: 0.95rem;
 }
 
@@ -162,8 +162,9 @@ width: 58px;
 
 .hero__lead {
   margin: 0;
-  color: var(--text);
+  color: rgb(254, 27, 72);
   font-size: 0.98rem;
+  font-style: italic;
 }
 
 .hero__actions {

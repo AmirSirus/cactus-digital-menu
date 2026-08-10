@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>گالری پروتوتایپ‌ها | Cactus Digital Menu</title>
+    <meta name="description"
+        content="مقایسه زنده ۱۲ نسخه منوی دیجیتال کاکتوس، طراحی‌شده توسط مدل‌های مختلف هوش مصنوعی" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" />
+    <link rel="stylesheet" href="gallery.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">
+        <img src="logo.svg" class="brand-logo" alt="لوگوی کاکتوس" width="80" height="44">
+                <div class="brand-text">
+                    <h1>گالری پروتوتایپ‌ها</h1>
+                    <p>Cactus Digital Menu &mdash; مقایسه طراحی مدل‌های هوش مصنوعی</p>
+                </div>
+            </div>
+
+            <a class="repo-link" href="https://github.com/AmirSirus/cactus-digital-menu" target="_blank"
+                rel="noopener noreferrer">
+                مشاهده مخزن در GitHub
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="toolbar" aria-label="فیلتر و جست‌وجو">
+            <div class="filter-group" id="familyFilters" role="group" aria-label="فیلتر بر اساس خانواده مدل"></div>
+
+            <div class="search-box">
+                <label class="sr-only" for="searchInput">جست‌وجوی پروتوتایپ</label>
+                <input type="search" id="searchInput" placeholder="جست‌وجو بر اساس نام، مدل یا مسیر…"
+                    autocomplete="off" />
+            </div>
+        </section>
+
+        <p class="result-count" id="resultCount" aria-live="polite"></p>
+
+        <section class="grid" id="grid" aria-label="لیست پروتوتایپ‌ها"></section>
+
+        <p class="empty-state" id="emptyState" hidden>موردی با این فیلتر پیدا نشد.</p>
+    </main>
+
+    <footer class="site-footer">
+        <p>هر پروتوتایپ کاملاً مستقل اجرا می‌شود و فایل‌هایش در ریشه مخزن باقی مانده است.</p>
+    </footer>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+        <div class="modal-bar">
+            <div class="modal-meta">
+                <h2 id="modalTitle"></h2>
+                <span class="modal-path" id="modalPath" dir="ltr"></span>
+            </div>
+
+            <div class="modal-actions">
+                <div class="viewport-switch" role="group" aria-label="اندازه نمایش">
+                    <button type="button" data-viewport="mobile" class="is-active" aria-pressed="true">موبایل</button>
+                    <button type="button" data-viewport="tablet" aria-pressed="false">تبلت</button>
+                    <button type="button" data-viewport="desktop" aria-pressed="false">دسکتاپ</button>
+                </div>
+
+                <a id="modalOpen" class="btn btn-ghost" href="#" target="_blank" rel="noopener noreferrer">تب جدید</a>
+
+                <button type="button" class="btn btn-close" id="modalClose" aria-label="بستن پیش‌نمایش">✕</button>
+            </div>
+        </div>
+
+        <div class="modal-stage" id="modalStage">
+            <div class="frame-wrap" id="frameWrap">
+                <div class="frame-loader" id="frameLoader" aria-hidden="true"><span></span></div>
+                <iframe id="modalFrame" title="پیش‌نمایش پروتوتایپ" src="about:blank" loading="lazy"
+                    referrerpolicy="no-referrer"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="gallery.js"></script>
+</body>
+
+</html>

@@ -40,7 +40,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+  font-family: "Vazirmatn", "Segoe UI", sans-serif;
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.7;
@@ -86,7 +86,10 @@ ul { list-style: none; }
 .brand { display: flex; align-items: center; gap: 12px; }
 
 .brand-logo {
-  font-size: 1.8rem;
+  display: block;
+  width: 80px;
+  height: 44px;
+  object-fit: contain;
   filter: drop-shadow(0 0 6px rgba(225, 29, 42, 0.4));
 }
 

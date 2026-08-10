@@ -1,0 +1,386 @@
+/* =========================================================
+   Cactus Digital Menu — Prototype Gallery
+   پالت هم‌راستا با claude-2/style.css
+   ========================================================= */
+
+:root {
+    --bg: #0d0d0d;
+    --bg-elevated: #1a1a1a;
+    --bg-card: #161616;
+    --surface: #202020;
+    --red: #e11d2a;
+    --red-dark: #b3151f;
+    --red-soft: rgba(225, 29, 42, 0.12);
+    --text: #f5f5f5;
+    --text-muted: #9a9a9a;
+    --border: #2a2a2a;
+
+    --radius: 14px;
+    --radius-sm: 9px;
+    --transition: 0.22s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(13, 13, 13, 0.88);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo {
+    height: 44px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.brand-text h1 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.brand-text p {
+    margin: 2px 0 0;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.repo-link {
+    padding: 9px 16px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--bg-elevated);
+    transition: border-color var(--transition), color var(--transition);
+}
+
+.repo-link:hover,
+.repo-link:focus-visible {
+    border-color: var(--red);
+    color: var(--red);
+}
+
+/* ---------- Layout ---------- */
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 34px 22px 60px;
+}
+
+/* ---------- Toolbar ---------- */
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+    padding: 16px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.filter-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-card);
+    font-family: inherit;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.filter-btn:hover {
+    border-color: var(--red);
+    color: var(--text);
+}
+
+.filter-btn.is-active {
+    background: var(--red);
+    border-color: var(--red);
+    color: #fff;
+}
+
+.filter-btn .count {
+    margin-inline-start: 6px;
+    font-size: 0.72rem;
+    opacity: 0.75;
+}
+
+.search-box {
+    flex: 1 1 240px;
+    max-width: 320px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 9px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.85rem;
+    transition: border-color var(--transition);
+}
+
+.search-box input::placeholder {
+    color: #6e6e6e;
+}
+
+.search-box input:focus {
+    border-color: var(--red);
+    outline: none;
+}
+
+.result-count {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0 0 20px;
+}
+
+/* ---------- Grid ---------- */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.proto-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition), border-color var(--transition);
+    cursor: pointer;
+}
+
+.proto-card:hover {
+    border-color: var(--red);
+    transform: translateY(-4px);
+}
+
+.proto-card h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+}
+
+.proto-card p {
+    margin: 0 0 14px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    flex-grow: 1;
+}
+
+.proto-card .badge {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 2px 8px;
+    margin-bottom: 10px;
+    font-size: 0.7rem;
+    background: var(--surface);
+    border-radius: 6px;
+    color: var(--text-muted);
+}
+
+/* ---------- Modal ---------- */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+}
+
+.modal[hidden] {
+    display: none;
+}
+
+.modal-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 22px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-elevated);
+}
+
+.modal-meta h2 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.modal-path {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-family: monospace;
+}
+
+.modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.viewport-switch {
+    display: flex;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.viewport-switch button {
+    padding: 6px 12px;
+    border: none;
+    background: var(--bg-card);
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background var(--transition);
+}
+
+.viewport-switch button.is-active {
+    background: var(--surface);
+    color: var(--text);
+    font-weight: 600;
+}
+
+.btn {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.btn-close {
+    background: var(--red);
+    color: #fff;
+    border: none;
+}
+
+.btn-ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+}
+
+.modal-stage {
+    flex-grow: 1;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.frame-wrap {
+    width: 100%;
+    height: 100%;
+    max-width: 480px;
+    position: relative;
+    transition: max-width var(--transition);
+}
+
+#modalFrame {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: 4px solid var(--surface);
+    border-radius: 12px;
+}
+
+.frame-wrap.tablet {
+    max-width: 768px;
+}
+
+.frame-wrap.desktop {
+    max-width: 100%;
+}
+
+.frame-loader {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    z-index: -1;
+    color: var(--text-muted);
+}

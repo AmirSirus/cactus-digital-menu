@@ -3,12 +3,12 @@
     /* Colors - Dark Theme with appetizing accents (Orange/Red) */
     --bg-color: #121212;
     --surface-color: #1e1e1e;
-    --primary-color: #ff5722; /* Appetizing Orange */
-    --primary-hover: #e64a19;
+    --primary-color: #ff2222; /* Appetizing Orange */
+    --primary-hover: #e61919;
     --text-main: #ffffff;
     --text-muted: #aaaaaa;
     --border-color: #333333;
-    --badge-bg: #ffb74d;
+    --badge-bg: #ff5f4dcb;
     --badge-text: #000000;
     --out-of-stock-bg: #424242;
     --success-color: #4caf50;

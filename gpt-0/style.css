@@ -9,11 +9,11 @@
   --color-text-muted: #a7a7a7;
   --color-text-soft: #d1d1d1;
 
-  --color-primary: #ff5a1f;
-  --color-primary-hover: #ff713e;
-  --color-secondary: #ffc107;
+  --color-primary: #ff1f1f;
+  --color-primary-hover: #ff3e3e;
+  --color-secondary: #ff0749;
   --color-success: #42d392;
-  --color-danger: #ff6b6b;
+  --color-danger: #8a1010;
 
   --shadow-card: 0 12px 35px rgba(0, 0, 0, 0.2);
   --shadow-primary: 0 10px 25px rgba(255, 90, 31, 0.2);
@@ -441,8 +441,8 @@ h1 {
   align-items: center;
   padding: 3px 9px;
   border-radius: 999px;
-  background: rgba(17, 17, 17, 0.8);
-  color: #ffffff;
+  background: rgb(0, 0, 0);
+  color: #ff0000;
   font-size: 10px;
   font-weight: 700;
   backdrop-filter: blur(8px);
@@ -450,7 +450,7 @@ h1 {
 
 .badge-highlight {
   background: var(--color-secondary);
-  color: #1b1b1b;
+  color: #ffffff;
 }
 
 .badge-danger {

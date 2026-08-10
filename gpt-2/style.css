@@ -120,22 +120,19 @@ img {
 }
 
 .brand__mark {
-  width: 58px;
+width: 58px;
   height: 58px;
-  border-radius: 18px;
-  background:
-    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.22), transparent 22%),
-    linear-gradient(145deg, var(--accent), #8b1111);
-  position: relative;
-  box-shadow: 0 12px 30px rgba(229, 57, 53, 0.34);
+  /* عرض خودش را از نسبت SVG می‌گیرد */
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent);
+  /* رنگ لوگو از اینجا کنترل می‌شود */
 }
-
-.brand__mark span {
-  position: absolute;
-  inset: 13px;
-  border-radius: 14px 14px 18px 18px;
-  border: 2px solid rgba(255, 255, 255, 0.22);
-  transform: rotate(-6deg);
+.brand__logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
 }
 
 .brand__eyebrow {

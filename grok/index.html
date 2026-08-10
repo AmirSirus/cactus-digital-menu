@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="منوی دیجیتال کاکتوس فست‌فود - سفارش آنلاین و تحویل سریع">
+    <title>کاکتوس فست‌فود • منوی دیجیتال</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <h1>کاکتوس</h1>
+                <span class="logo-subtitle">فست‌فود</span>
+            </div>
+            
+            <div class="header-right">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="جستجو در منو..." class="search-input">
+                </div>
+                
+                <div class="header-actions">
+                    <button id="cart-btn" class="cart-btn">
+                        <span>سبد خرید</span>
+                        <span id="cart-count" class="cart-count">۰</span>
+                    </button>
+                    <button id="category-btn" class="category-btn">دسته‌بندی‌ها</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="category-filters" id="category-filters">
+            <button data-category="all" class="filter-btn active">همه</button>
+            <button data-category="پیتزا" class="filter-btn">پیتزا</button>
+            <button data-category="برگر" class="filter-btn">برگر</button>
+            <button data-category="ساندویچ" class="filter-btn">ساندویچ</button>
+            <button data-category="سوخاری" class="filter-btn">سوخاری</button>
+            <button data-category="پیش‌غذا" class="filter-btn">پیش‌غذا</button>
+            <button data-category="نوشیدنی" class="filter-btn">نوشیدنی</button>
+            <button data-category="سس و افزودنی" class="filter-btn">سس و افزودنی</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu-container">
+            <div class="results-info">
+                <span id="results-count">در حال بارگذاری...</span>
+            </div>
+            
+            <div id="menu-grid" class="menu-grid"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>کاکتوس فست‌فود</h3>
+                <p>تهران • تحویل در کمتر از ۳۰ دقیقه</p>
+            </div>
+            
+            <div class="footer-actions">
+                <a href="tel:02112345678" class="action-btn">
+                    <span>📞 تماس با ما</span>
+                </a>
+                <a href="https://maps.google.com/?q=کاکتوس+فست+فود" target="_blank" class="action-btn">
+                    <span>📍 مسیر یابی</span>
+                </a>
+                <a href="https://instagram.com/cactusfastfood" target="_blank" class="action-btn instagram">
+                    <span>📸 اینستاگرام</span>
+                </a>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="action-btn back-to-top">
+                    <span>↑ بازگشت به بالا</span>
+                </button>
+            </div>
+            
+            <p class="copyright">© ۱۴۰۴ کاکتوس فست‌فود • منوی دیجیتال</p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>سبد خرید</h3>
+            <button id="close-cart" class="close-cart">✕</button>
+        </div>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>جمع کل:</span>
+                <span id="cart-total">۰ تومان</span>
+            </div>
+            <button id="checkout-btn" class="checkout-btn" disabled>ادامه به پرداخت</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

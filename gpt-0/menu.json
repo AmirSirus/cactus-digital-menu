@@ -1,0 +1,166 @@
+{
+  "restaurant": {
+    "name": "فست‌فود کاکتوس",
+    "pageTitle": "منوی دیجیتال فست‌فود کاکتوس",
+    "slogan": "طعم خوب، حال خوب",
+    "heroTitle": "طعمی که فراموش نمی‌کنی",
+    "heroDescription": "تازه، داغ و آماده برای یک انتخاب خوشمزه.",
+    "phone": "+982100000000",
+    "address": "تهران، خیابان نمونه، پلاک ۱۲",
+    "instagram": "https://instagram.com/cactusfastfood",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=تهران",
+    "categories": [
+      {
+        "id": "pizza",
+        "title": "پیتزا"
+      },
+      {
+        "id": "burger",
+        "title": "برگر"
+      },
+      {
+        "id": "sandwich",
+        "title": "ساندویچ"
+      },
+      {
+        "id": "fried",
+        "title": "سوخاری"
+      },
+      {
+        "id": "appetizer",
+        "title": "پیش‌غذا"
+      },
+      {
+        "id": "drink",
+        "title": "نوشیدنی"
+      },
+      {
+        "id": "sauce",
+        "title": "سس و افزودنی"
+      }
+    ]
+  },
+  "items": [
+    {
+      "id": 1,
+      "name": "پیتزا مخصوص کاکتوس",
+      "description": "ژامبون، گوشت چرخ‌کرده، قارچ، فلفل دلمه‌ای، زیتون و پنیر موزارلا.",
+      "price": 285000,
+      "currency": "تومان",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=85",
+      "imageAlt": "پیتزای مخصوص با پنیر و مواد مختلف",
+      "category": "pizza",
+      "badges": [
+        "پرفروش",
+        "ویژه"
+      ],
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "برگر کلاسیک",
+      "description": "گوشت خالص گریل‌شده، کاهو، گوجه، خیارشور و سس مخصوص.",
+      "price": 198000,
+      "currency": "تومان",
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85",
+      "imageAlt": "برگر کلاسیک با سیب‌زمینی",
+      "category": "burger",
+      "badges": [
+        "محبوب"
+      ],
+      "available": true
+    },
+    {
+      "id": 3,
+      "name": "چیزبرگر دوبل",
+      "description": "دو لایه گوشت گریل‌شده، پنیر چدار، پیاز کاراملی و سس برگر.",
+      "price": 298000,
+      "currency": "تومان",
+      "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=85",
+      "imageAlt": "چیزبرگر دوبل با پنیر",
+      "category": "burger",
+      "badges": [
+        "پیشنهاد ویژه"
+      ],
+      "available": true
+    },
+    {
+      "id": 4,
+      "name": "ساندویچ مرغ گریل",
+      "description": "فیله مرغ گریل‌شده، قارچ، پنیر، کاهو و سس سیر در نان تازه.",
+      "price": 175000,
+      "currency": "تومان",
+      "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?auto=format&fit=crop&w=900&q=85",
+      "imageAlt": "ساندویچ مرغ گریل‌شده",
+      "category": "sandwich",
+      "badges": [
+        "جدید"
+      ],
+      "available": true
+    },
+    {
+      "id": 5,
+      "name": "بشقاب فیله سوخاری",
+      "description": "فیله مرغ سوخاری ترد به همراه سیب‌زمینی، سالاد کلم و سس مخصوص.",
+      "price": 245000,
+      "currency": "تومان",
+      "image": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=900&q=85",
+      "imageAlt": "فیله مرغ سوخاری با سیب‌زمینی",
+      "category": "fried",
+      "badges": [
+        "پرفروش"
+      ],
+      "available": true
+    },
+    {
+      "id": 6,
+      "name": "سیب‌زمینی ویژه",
+      "description": "سیب‌زمینی ترد به همراه پنیر چدار، ژامبون و سس مخصوص.",
+      "price": 125000,
+      "currency": "تومان",
+      "image": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85",
+      "imageAlt": "سیب‌زمینی سرخ‌کرده با پنیر",
+      "category": "appetizer",
+      "badges": [
+        "محبوب"
+      ],
+      "available": true
+    },
+    {
+      "id": 7,
+      "name": "نوشابه قوطی",
+      "description": "نوشابه خنک قوطی در طعم‌های مختلف.",
+      "price": 35000,
+      "currency": "تومان",
+      "image": "https://images.unsplash.com/photo-1629203849820-fdd70d49c38e?auto=format&fit=crop&w=900&q=85",
+      "imageAlt": "نوشیدنی خنک",
+      "category": "drink",
+      "badges": [],
+      "available": true
+    },
+    {
+      "id": 8,
+      "name": "سس سیر",
+      "description": "سس سیر خامه‌ای و خوش‌طعم برای کامل‌تر شدن غذای شما.",
+      "price": 18000,
+      "currency": "تومان",
+      "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85",
+      "imageAlt": "سس سیر در ظرف کوچک",
+      "category": "sauce",
+      "badges": [],
+      "available": true
+    },
+    {
+      "id": 9,
+      "name": "پیتزا گوشت و قارچ",
+      "description": "گوشت مزه‌دارشده، قارچ تازه، پنیر موزارلا و سس مخصوص.",
+      "price": 265000,
+      "currency": "تومان",
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=85",
+      "imageAlt": "پیتزای گوشت و قارچ",
+      "category": "pizza",
+      "badges": [],
+      "available": false
+    }
+  ]
+}

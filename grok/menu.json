@@ -1,0 +1,158 @@
+{
+  "restaurant": "کاکتوس فست‌فود",
+  "address": "تهران",
+  "phone": "021-12345678",
+  "instagram": "https://instagram.com/cactusfastfood",
+  "items": [
+    {
+      "id": 1,
+      "name": "پیتزا مارگاریتا",
+      "description": "سس گوجه فرنگی، پنیر موزارلا، ریحان تازه",
+      "price": 185000,
+      "image": "https://picsum.photos/id/1015/600/400",
+      "category": "پیتزا",
+      "tags": ["گوشت", "تازه"],
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "پیتزا پپرونی",
+      "description": "سس گوجه، پنیر، پپرونی دودکش",
+      "price": 210000,
+      "image": "https://picsum.photos/id/201/600/400",
+      "category": "پیتزا",
+      "tags": ["گوشت", "تند"],
+      "available": true
+    },
+    {
+      "id": 3,
+      "name": "پیتزا ونیشا",
+      "description": "مرغ، قارچ، فلفل دلمه‌ای و پنیر",
+      "price": 220000,
+      "image": "https://picsum.photos/id/29/600/400",
+      "category": "پیتزا",
+      "tags": ["گوشت", "گوشت"],
+      "available": true
+    },
+    {
+      "id": 4,
+      "name": "برگر کلاسیک",
+      "description": "گوشت گاو ۱۸۰گرمی، پنیر چدار، خیار، گوجه",
+      "price": 140000,
+      "image": "https://picsum.photos/id/160/600/400",
+      "category": "برگر",
+      "tags": ["گوشت"],
+      "available": true
+    },
+    {
+      "id": 5,
+      "name": "برگر سوئیسی",
+      "description": "برگر با پنیر سوئیسی و سس خاص",
+      "price": 160000,
+      "image": "https://picsum.photos/id/201/600/400",
+      "category": "برگر",
+      "tags": ["گوشت"],
+      "available": true
+    },
+    {
+      "id": 6,
+      "name": "ساندویچ مرغ سوخاری",
+      "description": "مرغ سوخاری، سس مایونز، خیار و پیاز",
+      "price": 95000,
+      "image": "https://picsum.photos/id/133/600/400",
+      "category": "ساندویچ",
+      "tags": ["مرغ"],
+      "available": true
+    },
+    {
+      "id": 7,
+      "name": "ساندویچ گوشت چرخه‌ای",
+      "description": "گوشت گاو، سس خاص، سبزیجات",
+      "price": 125000,
+      "image": "https://picsum.photos/id/1015/600/400",
+      "category": "ساندویچ",
+      "tags": ["گوشت"],
+      "available": true
+    },
+    {
+      "id": 8,
+      "name": "سیب‌زمینی سوخاری",
+      "description": "سیب‌زمینی طلایی با ادویه کاکتوس",
+      "price": 45000,
+      "image": "https://picsum.photos/id/29/600/400",
+      "category": "سوخاری",
+      "tags": [],
+      "available": true
+    },
+    {
+      "id": 9,
+      "name": "چیکن نگت",
+      "description": "۶ عدد چیکن نگت با سس",
+      "price": 65000,
+      "image": "https://picsum.photos/id/160/600/400",
+      "category": "سوخاری",
+      "tags": ["مرغ"],
+      "available": true
+    },
+    {
+      "id": 10,
+      "name": "سالاد فتا",
+      "description": "سالاد با فتا، گوجه، زیتون و سس بالزامیک",
+      "price": 85000,
+      "image": "https://picsum.photos/id/201/600/400",
+      "category": "پیش‌غذا",
+      "tags": ["سالاد", "سبزی"],
+      "available": true
+    },
+    {
+      "id": 11,
+      "name": "لذت باگر",
+      "description": "برگر با پنیر، سس و سبزیجات",
+      "price": 155000,
+      "image": "https://picsum.photos/id/1015/600/400",
+      "category": "برگر",
+      "tags": ["گوشت"],
+      "available": true
+    },
+    {
+      "id": 12,
+      "name": "کوکاکولا",
+      "description": "نوشیدنی گازدار ۳۳۰ میلی‌لیتر",
+      "price": 35000,
+      "image": "https://picsum.photos/id/29/600/400",
+      "category": "نوشیدنی",
+      "tags": ["نوشیدنی"],
+      "available": true
+    },
+    {
+      "id": 13,
+      "name": "لیموآد تازه",
+      "description": "لیمو تازه و نعنا",
+      "price": 45000,
+      "image": "https://picsum.photos/id/160/600/400",
+      "category": "نوشیدنی",
+      "tags": ["نوشیدنی"],
+      "available": true
+    },
+    {
+      "id": 14,
+      "name": "سس گوجه",
+      "description": "سس ویژه فست‌فود",
+      "price": 25000,
+      "image": "https://picsum.photos/id/201/600/400",
+      "category": "سس و افزودنی",
+      "tags": ["سس"],
+      "available": true
+    },
+    {
+      "id": 15,
+      "name": "پنیر اضافی",
+      "description": "اضافه پنیر چدار",
+      "price": 30000,
+      "image": "https://picsum.photos/id/133/600/400",
+      "category": "سس و افزودنی",
+      "tags": ["افزودنی"],
+      "available": true
+    }
+  ]
+}

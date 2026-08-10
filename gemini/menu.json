@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "پیتزا پپرونی ویژه",
+    "category": "pizza",
+    "description": "پپرونی ۹۰٪، پنیر موزارلا، سس مخصوص، قارچ، فلفل هالوپینو",
+    "price": 280000,
+    "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500&q=80",
+    "available": true,
+    "badges": ["تند", "پرفروش"]
+  },
+  {
+    "id": 2,
+    "name": "برگر کلاسیک",
+    "category": "burger",
+    "description": "گوشت خالص گوساله ۱۵۰ گرمی، پنیر گودا، کاهو، گوجه، خیارشور، سس برگر",
+    "price": 220000,
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80",
+    "available": true,
+    "badges": ["پیشنهاد سرآشپز"]
+  },
+  {
+    "id": 3,
+    "name": "ساندویچ هات‌داگ پنیری",
+    "category": "sandwich",
+    "description": "هات‌داگ ۹۰٪، پنیر چدار، قارچ، سس خردل",
+    "price": 180000,
+    "image": "https://images.unsplash.com/photo-1625860533519-56a47a111b0d?w=500&q=80",
+    "available": false,
+    "badges": []
+  },
+  {
+    "id": 4,
+    "name": "مرغ سوخاری ۳ تکه",
+    "category": "fried",
+    "description": "۳ تکه مرغ سوخاری اسپایسی، سیب‌زمینی، نان بروتچن، سالاد کلم",
+    "price": 310000,
+    "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&q=80",
+    "available": true,
+    "badges": ["جدید"]
+  },
+  {
+    "id": 5,
+    "name": "سیب‌زمینی سرخ‌کرده با پنیر",
+    "category": "appetizer",
+    "description": "سیب‌زمینی سرخ‌کرده، سس پنیر دیپ، ادویه مخصوص",
+    "price": 120000,
+    "image": "https://images.unsplash.com/photo-1576107232684-1279f390859f?w=500&q=80",
+    "available": true,
+    "badges": []
+  },
+  {
+    "id": 6,
+    "name": "نوشابه قوطی کوکاکولا",
+    "category": "drink",
+    "description": "۳۳۰ میلی‌لیتر",
+    "price": 30000,
+    "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&q=80",
+    "available": true,
+    "badges": []
+  }
+]

@@ -1,0 +1,60 @@
+<!-- ===== index.html ===== -->
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="منوی دیجیتال فست‌فود - سفارش آنلاین با اسکن QR Code">
+    <meta name="theme-color" content="#0f0f0f">
+    <title>منوی دیجیتال فست‌فود</title>
+    <!-- فونت وزیرمتن (Vazirmatn) از CDN برای خوانایی بهتر فارسی -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23ff6b00'/%3E%3Cpath d='M35 40 L65 40 L55 70 L45 70 Z' fill='%231a1a1a'/%3E%3C/svg%3E" alt="لوگو" class="logo">
+            <h1 class="brand-name">فست‌فود <span>نوین</span></h1>
+        </div>
+    </header>
+
+    <!-- نوار جستجو و فیلتر -->
+    <section class="controls" aria-label="جستجو و فیلتر">
+        <div class="search-box" role="search">
+            <input type="text" id="searchInput" placeholder="جستجوی غذا یا نوشیدنی..." autocomplete="off" aria-label="جستجو">
+            <i class="search-icon" aria-hidden="true">🔍</i>
+        </div>
+        <div class="category-filters" id="categoryFilters" role="tablist" aria-label="دسته‌بندی‌ها">
+            <!-- دکمه‌های دسته‌بندی به‌صورت پویا از menu.json ساخته می‌شوند -->
+        </div>
+        <div class="results-summary" id="resultsSummary">تعداد نتایج: <span id="count">0</span></div>
+    </section>
+
+    <!-- منوی اصلی -->
+    <main class="menu-grid" id="menuGrid" aria-label="منوی غذاها">
+        <!-- کارت‌ها در اینجا قرار می‌گیرند -->
+    </main>
+
+    <!-- دکمه برگشت به بالا -->
+    <button class="back-to-top" id="backToTop" title="بازگشت به بالا" aria-label="بازگشت به بالا">⬆</button>
+
+    <!-- نوار پایین (تماس، مسیریابی، اینستاگرام) -->
+    <footer class="bottom-nav">
+        <a href="tel:09123456789" class="nav-item" aria-label="تماس با ما">
+            <i aria-hidden="true">📞</i>
+            <span>تماس</span>
+        </a>
+        <a href="https://maps.google.com/?q=35.6892,51.3890" target="_blank" rel="noopener" class="nav-item" aria-label="مسیریابی">
+            <i aria-hidden="true">📍</i>
+            <span>مسیریابی</span>
+        </a>
+        <a href="https://instagram.com/fastfood_novin" target="_blank" rel="noopener" class="nav-item" aria-label="اینستاگرام">
+            <i aria-hidden="true">📷</i>
+            <span>اینستاگرام</span>
+        </a>
+    </footer>
+</body>
+</html>

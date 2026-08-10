@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "name": "برگر کلاسیک کاکتوس",
+    "category": "برگر",
+    "description": "گوشت گوساله تازه، پنیر گودا، کاهو، خیارشور و سس مخصوص کاکتوس.",
+    "price": 185000,
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=900&auto=format&fit=crop",
+    "badges": ["پیشنهاد ویژه", "پرفروش"]
+  },
+  {
+    "id": 2,
+    "name": "چیزبرگر دابل",
+    "category": "برگر",
+    "description": "دو لایه گوشت گریل‌شده، پنیر چدار، پیاز کاراملی و سس دودی.",
+    "price": 245000,
+    "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=900&auto=format&fit=crop",
+    "badges": ["دابل", "پرطرفدار"]
+  },
+  {
+    "id": 3,
+    "name": "برگر مرغ اسپایسی",
+    "category": "برگر",
+    "description": "فیله مرغ سوخاری تند، کاهو، گوجه، خیارشور و سس اسپایسی.",
+    "price": 198000,
+    "image": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?q=80&w=900&auto=format&fit=crop",
+    "badges": ["تند"]
+  },
+  {
+    "id": 4,
+    "name": "پیتزا پپرونی",
+    "category": "پیتزا",
+    "description": "خمیر دست‌ساز، سس گوجه مخصوص، پنیر موزارلا و پپرونی فراوان.",
+    "price": 265000,
+    "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=900&auto=format&fit=crop",
+    "badges": ["پرفروش"]
+  },
+  {
+    "id": 5,
+    "name": "پیتزا مرغ و قارچ",
+    "category": "پیتزا",
+    "description": "مرغ مزه‌دار شده، قارچ تازه، فلفل دلمه‌ای، ذرت و پنیر کش‌دار.",
+    "price": 255000,
+    "image": "https://images.unsplash.com/photo-1594007654729-407eedc4be65?q=80&w=900&auto=format&fit=crop",
+    "badges": ["محبوب"]
+  },
+  {
+    "id": 6,
+    "name": "پیتزا مخصوص کاکتوس",
+    "category": "پیتزا",
+    "description": "ترکیب ژامبون گوشت و مرغ، قارچ، زیتون، فلفل دلمه‌ای و سس اختصاصی.",
+    "price": 285000,
+    "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=900&auto=format&fit=crop",
+    "badges": ["ویژه کاکتوس"]
+  },
+  {
+    "id": 7,
+    "name": "مرغ سوخاری دو تکه",
+    "category": "سوخاری",
+    "description": "دو تکه مرغ سوخاری کریسپی همراه با سیب‌زمینی و سس مخصوص.",
+    "price": 225000,
+    "image": "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?q=80&w=900&auto=format&fit=crop",
+    "badges": ["کریسپی"]
+  },
+  {
+    "id": 8,
+    "name": "فیله استریپس",
+    "category": "سوخاری",
+    "description": "فیله مرغ سوخاری‌شده با ادویه مخصوص، مناسب برای طرفداران طعم ترد.",
+    "price": 215000,
+    "image": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?q=80&w=900&auto=format&fit=crop",
+    "badges": ["محبوب"]
+  },
+  {
+    "id": 9,
+    "name": "سیب‌زمینی ویژه",
+    "category": "پیش‌غذا",
+    "description": "سیب‌زمینی سرخ‌شده، پنیر، قارچ، ژامبون و سس مخصوص.",
+    "price": 145000,
+    "image": "https://images.unsplash.com/photo-1576107232684-1279f390859f?q=80&w=900&auto=format&fit=crop",
+    "badges": ["ویژه"]
+  },
+  {
+    "id": 10,
+    "name": "قارچ سوخاری",
+    "category": "پیش‌غذا",
+    "description": "قارچ تازه با پوشش سوخاری طلایی، سرو شده همراه با سس سیر.",
+    "price": 118000,
+    "image": "https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?q=80&w=900&auto=format&fit=crop",
+    "badges": []
+  },
+  {
+    "id": 11,
+    "name": "هات‌داگ تنوری",
+    "category": "ساندویچ",
+    "description": "هات‌داگ گریل‌شده، پنیر، قارچ، چیپس خلالی و سس مخصوص.",
+    "price": 175000,
+    "image": "https://images.unsplash.com/photo-1612392062631-94dd858cba88?q=80&w=900&auto=format&fit=crop",
+    "badges": ["تنوری"]
+  },
+  {
+    "id": 12,
+    "name": "ساندویچ ژامبون تنوری",
+    "category": "ساندویچ",
+    "description": "ژامبون گوشت و مرغ، پنیر آب‌شده، قارچ و سس مخصوص کاکتوس.",
+    "price": 168000,
+    "image": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=900&auto=format&fit=crop",
+    "badges": []
+  },
+  {
+    "id": 13,
+    "name": "نوشابه قوطی",
+    "category": "نوشیدنی",
+    "description": "نوشابه قوطی خنک در طعم‌های مختلف.",
+    "price": 30000,
+    "image": "",
+    "badges": []
+  },
+  {
+    "id": 14,
+    "name": "موهیتو",
+    "category": "نوشیدنی",
+    "description": "نوشیدنی خنک با طعم لیمو و نعناع.",
+    "price": 85000,
+    "image": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?q=80&w=900&auto=format&fit=crop",
+    "badges": ["خنک"]
+  }
+]

@@ -39,13 +39,19 @@ body {
     radial-gradient(circle at top, rgba(229, 57, 53, 0.12), transparent 24%),
     linear-gradient(180deg, #09090d 0%, #060608 100%);
   color: var(--text);
-  font-family: Tahoma, Vazirmatn, "Segoe UI", sans-serif;
+  font-family: Vazirmatn, "Segoe UI", sans-serif;
   line-height: 1.7;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   padding-bottom: calc(92px + env(safe-area-inset-bottom));
-}
 
+}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
 body::before {
   content: "";
   position: fixed;

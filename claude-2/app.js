@@ -23,9 +23,7 @@ const state = {
 };
 
 /* تصویر جایگزین وقتی لینک تصویر خراب باشد (SVG درون‌خطی، بدون درخواست شبکه) */
-const PLACEHOLDER =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23202020'/%3E%3Ctext x='50%25' y='55%25' font-size='90' text-anchor='middle' fill='%23e11d2a' opacity='0.5'%3E%F0%9F%8C%B5%3C/text%3E%3C/svg%3E";
-
+const PLACEHOLDER = "logo.svg";
 /* ---------- ابزار: فرمت قیمت با جداکننده هزارگان فارسی ---------- */
 function formatPrice(value) {
   if (value == null || value === "") return "";

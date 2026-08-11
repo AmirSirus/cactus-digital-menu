@@ -247,9 +247,14 @@ ul { list-style: none; }
   place-items: center;
 }
 .card-media.placeholder::after {
-  content: "🌵";
-  font-size: 2.5rem;
-  opacity: 0.35;
+  content: "";
+  width: 200px;
+  height: 200px;
+  background-image: url("logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.5;
 }
 
 .card-body {

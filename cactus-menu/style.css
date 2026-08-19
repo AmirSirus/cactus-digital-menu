@@ -1,0 +1,692 @@
+/* =====================================================================
+   Cactus Digital Menu — Stylesheet
+   معماری: Design Tokens (متغیرها) → Base → Layout → Components → Utilities
+   رویکرد: Mobile-first + RTL
+   ===================================================================== */
+
+/* ---------- 1) Design Tokens ----------
+   تغییر پالت/فاصله/فونت را فقط از همین‌جا انجام بده تا کل UI هماهنگ بماند. */
+:root {
+  /* پالت پایه */
+  --bg-cream: #F3E5C0;       /* رنگ کرم پس‌زمینه کارت */
+  --cactus-green: #5B8251;   /* سبز بدنه کاکتوس */
+  --cactus-red: #C63C31;     /* قرمز آجری متن و کلاه */
+  --dark-border: #2C4231;    /* سبز بسیار تیره (شطرنجی‌ها و خطوط دور) */
+
+  /* توقف‌های دقیق گرادیانت‌های درخواستی */
+  --cream-light: #FBF3DD;
+  --cactus-green-light: #719A66;
+  --cactus-red-light: #DF4D41;
+  --transparent: transparent;
+
+  /* رنگ‌های مشتق‌شده از پالت پایه؛ بدون افزودن رنگ مستقل */
+  --surface-cream: color-mix(in srgb, var(--bg-cream) 90%, var(--cream-light));
+  --surface-cream-raised: color-mix(in srgb, var(--bg-cream) 76%, var(--cream-light));
+  --green-tint: color-mix(in srgb, var(--cactus-green) 14%, var(--bg-cream));
+  --red-tint: color-mix(in srgb, var(--cactus-red) 12%, var(--bg-cream));
+  --border-subtle: color-mix(in srgb, var(--dark-border) 24%, var(--transparent));
+  --border-soft: color-mix(in srgb, var(--dark-border) 48%, var(--transparent));
+  --shadow-color: color-mix(in srgb, var(--dark-border) 26%, var(--transparent));
+  --text-primary: var(--dark-border);
+  --text-secondary: var(--dark-border);
+  --text-on-color: var(--cream-light);
+
+  /* تایپوگرافی */
+  --font-base: "Vazirmatn", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fs-sm: 0.85rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 2rem;
+  --lh-tight: 1.4;
+  --lh-body: 1.8;
+  /* فارسی به line-height بازتر نیاز دارد */
+
+  /* فاصله‌گذاری (مقیاس ۴ پایه) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+
+  /* شکل و سایه */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --shadow-card: 0 16px 38px var(--shadow-color);
+  --shadow-soft: 0 8px 20px var(--shadow-color);
+  --shadow-dock: 0 -10px 28px var(--shadow-color);
+  --shadow-accent: 0 10px 24px var(--green-tint);
+  --shadow-red: 0 10px 24px var(--red-tint);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition: 200ms var(--ease-out);
+}
+
+/* ۱. گرادیانت پس‌زمینه سایت (جایگزین رنگ تخت برای عمق دادن به بک‌گراند) */
+.bg-gradient {
+  background: linear-gradient(to bottom, var(--cream-light) 0%, var(--bg-cream) 100%);
+}
+
+/* ۲. گرادیانت سبز (مناسب برای دکمه‌های اصلی، هدر یا کارت‌های آیتم منو) */
+.green-gradient {
+  background: linear-gradient(135deg, var(--cactus-green-light) 0%, var(--cactus-green) 100%);
+  color: var(--cream-light);
+}
+
+/* ۳. گرادیانت قرمز (مناسب برای دکمه‌های CTA، تخفیف‌ها یا آیکون‌های مهم) */
+.red-gradient {
+  background: linear-gradient(135deg, var(--cactus-red-light) 0%, var(--cactus-red) 100%);
+  color: var(--cream-light);
+}
+
+/* ---------- 2) Base / Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+  color: var(--text-primary);
+  background: linear-gradient(to bottom, var(--cream-light) 0%, var(--bg-cream) 100%);
+  min-height: 100vh;
+  padding-bottom: 6rem;
+  /* فضا برای نوار اکشن ثابت */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ---------- 3) Layout ---------- */
+.page-shell {
+  width: min(1100px, 100%);
+  margin-inline: auto;
+  padding: var(--space-5) var(--space-4);
+}
+
+.main-content {
+  margin-top: var(--space-5);
+}
+
+/* ---------- 4) Components ---------- */
+
+/* --- Hero / Brand --- */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5);
+  background: var(--surface-cream-raised);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.brand__mark {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 4.25rem;
+  height: 3.25rem;
+  padding: var(--space-2);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--cactus-green-light) 0%, var(--cactus-green) 100%);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+}
+
+.brand__mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand__eyebrow {
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.04em;
+}
+
+.brand__title {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  line-height: var(--lh-tight);
+  color: var(--cactus-red);
+}
+
+.brand__tagline {
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+/* --- Chip (دکمه‌های ارتباط) --- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-4);
+  border-radius: 999px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  transition: transform var(--transition), background var(--transition),
+    border-color var(--transition), box-shadow var(--transition);
+}
+
+.chip--ghost {
+  border: 1px solid var(--dark-border);
+  background: var(--surface-cream);
+}
+
+.chip--ghost:hover {
+  background: var(--green-tint);
+  border-color: var(--cactus-green);
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--cactus-red);
+  outline-offset: 2px;
+}
+
+/* --- Control Panel (جستجو + فیلتر) --- */
+.control-panel {
+  display: grid;
+  gap: var(--space-4);
+  margin-block: var(--space-5);
+}
+
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface-cream);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.search-field:focus-within {
+  border-color: var(--cactus-green);
+  box-shadow: 0 0 0 3px var(--green-tint), var(--shadow-soft);
+}
+
+.search-field__icon {
+  opacity: 0.7;
+}
+
+.search-field__input {
+  flex: 1;
+  border: none;
+  background: var(--transparent);
+  color: var(--text-primary);
+  font: inherit;
+}
+
+.search-field__input:focus {
+  outline: none;
+}
+
+.search-field__input::placeholder {
+  color: var(--text-secondary);
+}
+
+/* --- Filters --- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.filter-btn {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--dark-border);
+  border-radius: 999px;
+  background: var(--surface-cream);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: color var(--transition), background var(--transition),
+    border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+  background: var(--green-tint);
+  border-color: var(--cactus-green);
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-1px);
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid var(--cactus-red);
+  outline-offset: 2px;
+}
+
+/* دسته‌ی فعال: تضاد بالا برای مشخص‌بودن انتخاب */
+.filter-btn.is-active {
+  background: var(--surface-cream-raised);
+  color: var(--text-primary);
+  border-color: var(--cactus-green);
+  box-shadow: inset 0 0 0 1px var(--cactus-green);
+  font-weight: 700;
+}
+
+/* --- Status message --- */
+.status-message {
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-3);
+}
+
+/* --- Menu grid + cards --- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-cream);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition), border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--cactus-green);
+  box-shadow: var(--shadow-card), 0 0 0 1px var(--cactus-green);
+}
+
+.menu-card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, var(--cactus-green-light) 0%, var(--cactus-green) 100%);
+}
+
+.menu-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-card__media img.menu-card__image--placeholder {
+  padding: clamp(1.25rem, 5vw, 2rem);
+  object-fit: contain;
+  background: linear-gradient(135deg, var(--cactus-green-light) 0%, var(--cactus-green) 100%);
+}
+
+.menu-card__badge {
+  position: absolute;
+  inset-block-start: var(--space-3);
+  inset-inline-end: var(--space-3);
+  padding: var(--space-1) var(--space-3);
+  background: var(--cactus-red);
+  border: 1px solid var(--dark-border);
+  color: var(--text-on-color);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  border-radius: 999px;
+  box-shadow: 0 5px 14px var(--shadow-color);
+}
+
+.menu-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  flex: 1;
+}
+
+.menu-card__title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+}
+
+.menu-card__category {
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+}
+
+.menu-card__description {
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+  flex: 1;
+}
+
+.menu-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border-soft);
+}
+
+.menu-card__price {
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  color: var(--cactus-red);
+}
+
+.menu-card__price small {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* --- Empty state --- */
+.empty-state {
+  margin-top: var(--space-6);
+  text-align: center;
+}
+
+.empty-state__card {
+  display: inline-block;
+  padding: var(--space-6);
+  background: var(--surface-cream);
+  border: 1px dashed var(--dark-border);
+  border-radius: var(--radius-md);
+}
+
+.empty-state__title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+
+.empty-state__hint {
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+  margin-top: var(--space-2);
+}
+
+/* --- Footer --- */
+.site-footer {
+  margin-top: var(--space-6);
+  padding: var(--space-5);
+  text-align: center;
+  border-top: 1px solid var(--dark-border);
+}
+
+.site-footer__muted {
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+}
+
+/* --- Quick actions (نوار ثابت پایین) --- */
+.quick-actions {
+  position: fixed;
+  inset-inline: 0;
+  inset-block-end: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-1);
+  padding: var(--space-2);
+  background: var(--dark-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--cactus-green);
+  box-shadow: var(--shadow-dock);
+  z-index: 20;
+}
+
+.quick-actions__item {
+  --quick-action-color: var(--text-on-color);
+  --quick-action-surface: var(--transparent);
+  --quick-action-border: var(--transparent);
+  --quick-action-shadow: none;
+  --quick-action-icon-color: var(--text-on-color);
+  --quick-action-icon-surface: var(--transparent);
+  --quick-action-icon-border: var(--transparent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 3.75rem;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--transparent);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  color: var(--quick-action-color);
+  transition: color var(--transition), background var(--transition),
+    border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.quick-actions__item:hover,
+.quick-actions__item:focus-visible {
+  color: var(--quick-action-color);
+  background: var(--quick-action-surface);
+  border-color: var(--quick-action-border);
+  box-shadow: var(--quick-action-shadow);
+  transform: translateY(-2px);
+}
+
+.quick-actions__item:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.quick-actions__item:focus-visible {
+  outline: 2px solid var(--quick-action-color);
+  outline-offset: 2px;
+}
+
+.quick-actions__icon {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: var(--quick-action-icon-color);
+  background: var(--quick-action-icon-surface);
+  border: 1px solid var(--quick-action-icon-border);
+  border-radius: 50%;
+  transition: color var(--transition), background var(--transition),
+    border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.quick-actions__svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.quick-actions__item:hover .quick-actions__icon,
+.quick-actions__item:focus-visible .quick-actions__icon {
+  box-shadow: inset 0 1px 0 var(--cream-light);
+  transform: translateY(-1px) scale(1.04);
+}
+
+.quick-actions__item--contact {
+  --quick-action-border: var(--cactus-green);
+  --quick-action-icon-surface: var(--cactus-green);
+  --quick-action-icon-border: var(--cream-light);
+}
+
+.quick-actions__item--instagram {
+  --quick-action-border: var(--cactus-red);
+  --quick-action-icon-surface: var(--cactus-red);
+  --quick-action-icon-border: var(--cream-light);
+}
+
+.quick-actions__item--directions {
+  --quick-action-border: var(--cactus-red);
+}
+
+.quick-actions__item--directions .quick-actions__icon {
+  color: var(--text-on-color);
+  background: linear-gradient(135deg, var(--cactus-red-light) 0%, var(--cactus-red) 100%);
+  border-color: var(--cream-light);
+}
+
+.quick-actions__item--directions:hover,
+.quick-actions__item--directions:focus-visible {
+  color: var(--text-on-color);
+  background: var(--transparent);
+  border-color: var(--cactus-red);
+  box-shadow: var(--shadow-red);
+  transform: translateY(-2px);
+}
+
+.quick-actions__item--directions:hover .quick-actions__icon,
+.quick-actions__item--directions:focus-visible .quick-actions__icon {
+  background: linear-gradient(135deg, var(--cactus-red-light) 0%, var(--cactus-red) 100%);
+  box-shadow: var(--shadow-red);
+  transform: translateY(-1px) scale(1.05);
+}
+
+.quick-actions__item--directions:active {
+  background: var(--transparent);
+  box-shadow: inset 0 1px 0 var(--cream-light);
+  transform: translateY(0) scale(0.98);
+}
+
+/* --- Back to top --- */
+.back-to-top {
+  position: fixed;
+  inset-block-end: 5rem;
+  inset-inline-start: var(--space-4);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cactus-red-light) 0%, var(--cactus-red) 100%);
+  color: var(--text-on-color);
+  font-size: 1.25rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  box-shadow: var(--shadow-accent);
+  transition: opacity var(--transition), transform var(--transition),
+    background var(--transition), box-shadow var(--transition);
+  z-index: 20;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: var(--cactus-red);
+  box-shadow: var(--shadow-red);
+}
+
+.back-to-top:focus-visible {
+  outline: 2px solid var(--cactus-red);
+  outline-offset: 3px;
+}
+
+/* ---------- 5) Utilities ---------- */
+
+/* لینک پرش (فقط هنگام focus دیده می‌شود) */
+.skip-link {
+  position: absolute;
+  inset-block-start: -100px;
+  inset-inline-start: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  background: var(--dark-border);
+  color: var(--text-on-color);
+  border-radius: var(--radius-sm);
+  z-index: 100;
+  transition: inset-block-start var(--transition);
+}
+
+.skip-link:focus {
+  inset-block-start: var(--space-4);
+}
+
+/* پنهان از دید اما قابل‌خواندن برای اسکرین‌ریدر */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- 6) Responsive ---------- */
+@media (min-width: 768px) {
+  .brand__title {
+    font-size: 2.5rem;
+  }
+
+  .quick-actions {
+    inset-inline: 0;
+    width: max-content;
+    margin-inline: auto;
+    border: 1px solid var(--dark-border);
+    border-radius: 999px;
+  }
+
+  .quick-actions__item {
+    flex-direction: row;
+    min-height: auto;
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .quick-actions__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  body {
+    padding-bottom: 6.5rem;
+  }
+
+  .back-to-top {
+    inset-block-end: 6.75rem;
+  }
+}
+
+/* ---------- 7) Motion preference ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

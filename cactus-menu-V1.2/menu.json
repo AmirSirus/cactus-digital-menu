@@ -1,0 +1,263 @@
+[
+    {
+        "id": "juicy-burger",
+        "name": "برگر آبدار کاکتوس",
+        "category": "برگرها",
+        "badge": "",
+        "description": "بیف‌برگر، کاهو، گوجه، خیارشور، سس پیاز و پنیر چدار",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "mushroom-burger",
+        "name": "برگر قارچ و چدار",
+        "category": "برگرها",
+        "badge": "",
+        "description": "بیف‌برگر، کاهو، گوجه، خیارشور، سس قارچ و پنیر چدار",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "smoky-burger",
+        "name": "برگر دودی کاکتوس",
+        "category": "برگرها",
+        "badge": "",
+        "description": "بیف‌برگر، کاهو، گوجه، خیارشور، سس باربیکیو و پنیر چدار",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "mega-burger",
+        "name": "مگابرگر کاکتوس",
+        "category": "برگرها",
+        "badge": "",
+        "description": "بیف‌برگر، کاهو، گوجه، خیارشور، پیاز سوخاری و سس مخصوص کاکتوس",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "zinger-burger",
+        "name": "برگر زینگر کاکتوس",
+        "category": "برگرها",
+        "badge": "",
+        "description": "فیله یا شنیسل مرغ، کاهو، گوجه، خیارشور، پنیر چدار و سس مخصوص کاکتوس",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "jalapeno-burger",
+        "name": "برگر آتشین هالوپینو",
+        "category": "برگرها",
+        "badge": "",
+        "description": "بیف‌برگر، کاهو، گوجه، خیارشور، هالوپینو، پنیر چدار و سس مخصوص کاکتوس",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "classic-burger",
+        "name": "برگر کلاسیک کاکتوس",
+        "category": "برگرها",
+        "badge": "",
+        "description": "بیف‌برگر، کاهو، گوجه، خیارشور، پنیر چدار و سس مخصوص کاکتوس",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "double-classic-burger",
+        "name": "دبل کلاسیک کاکتوس",
+        "category": "برگرها",
+        "badge": "",
+        "description": "دو بیف‌برگر، کاهو، گوجه، خیارشور، دو لایه پنیر چدار و سس مخصوص کاکتوس",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "king-burger",
+        "name": "کینگ‌برگر کاکتوس",
+        "category": "برگرها",
+        "badge": "",
+        "description": "دو بیف‌برگر، دو تکه ژامبون گوشت سرخ‌شده، کاهو، گوجه، خیارشور، پنیر چدار و سس مخصوص کاکتوس",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "mega-zinger",
+        "name": "مگا زینگر کاکتوس",
+        "category": "برگرها",
+        "badge": "",
+        "description": "دو فیله سوخاری، کاهو، گوجه، خیارشور، دو لایه پنیر چدار و سس مخصوص کاکتوس",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "chicken-alfredo-pasta",
+        "name": "پاستا مرغ آلفردو",
+        "category": "پاستا",
+        "badge": "",
+        "description": "پاستا به‌همراه مرغ و سس خامه‌ای آلفردو",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "chicken-pesto-pasta",
+        "name": "پاستا مرغ پستو",
+        "category": "پاستا",
+        "badge": "",
+        "description": "پاستا به‌همراه مرغ و سس پستو",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "beef-alfredo-pasta",
+        "name": "پاستا گوشت آلفردو",
+        "category": "پاستا",
+        "badge": "",
+        "description": "پاستا به‌همراه گوشت و سس خامه‌ای آلفردو",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "special-pizza",
+        "name": "پیتزا مخصوص کاکتوس",
+        "category": "پیتزا",
+        "badge": "",
+        "description": "سس گوجه، گوشت چرخ‌کرده، ژامبون مرغ و گوشت، قارچ، پنیر پیتزا، فلفل دلمه‌ای، ذرت و زیتون",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "chicken-pizza",
+        "name": "پیتزا مرغ کاکتوس",
+        "category": "پیتزا",
+        "badge": "",
+        "description": "سس گوجه، مرغ نگینی، قارچ، پنیر پیتزا، فلفل دلمه‌ای، ذرت و زیتون",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "steak-pizza",
+        "name": "پیتزا استیک سیر",
+        "category": "پیتزا",
+        "badge": "",
+        "description": "سس سیر، گوشت رست ورقه‌ای، قارچ، پنیر پیتزا و زیتون",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "pepperoni-pizza",
+        "name": "پیتزا پپرونی",
+        "category": "پیتزا",
+        "badge": "",
+        "description": "سس گوجه، پپرونی، قارچ، پنیر پیتزا و فلفل دلمه‌ای",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "four-flavors-pizza",
+        "name": "پیتزا چهار طعم",
+        "category": "پیتزا",
+        "badge": "",
+        "description": "ترکیبی از چهار طعم پپرونی، استیک، مخصوص و مرغ",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "greek-pizza",
+        "name": "پیتزا یونانی",
+        "category": "پیتزا",
+        "badge": "",
+        "description": "سس گوجه، مرغ، ژامبون مرغ، قارچ، پنیر پیتزا، فلفل دلمه‌ای و گوجه",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "roast-beef-pizza",
+        "name": "پیتزا رست‌بیف",
+        "category": "پیتزا",
+        "badge": "",
+        "description": "سس گوجه، گوشت رست ریش‌ریش، قارچ، پنیر پیتزا و فلفل دلمه‌ای",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "quad-fillet",
+        "name": "فیله چهارتایی کاکتوس",
+        "category": "سوخاری و سیب‌زمینی",
+        "badge": "",
+        "description": "چهار تکه فیله سوخاری، سه سس مخصوص کاکتوس، سالاد کلم و بروتچن",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "hex-fillet",
+        "name": "فیله شش‌تایی کاکتوس",
+        "category": "سوخاری و سیب‌زمینی",
+        "badge": "",
+        "description": "شش تکه فیله سوخاری، چهار سس مخصوص کاکتوس، سالاد کلم و بروتچن",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "eco-basket",
+        "name": "سبد دورهمی کاکتوس",
+        "category": "سوخاری و سیب‌زمینی",
+        "badge": "",
+        "description": "سه تکه مرغ سوخاری، چهار تکه فیله، سیب‌زمینی، دو نوشابه و دو سالاد",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "onion-rings",
+        "name": "حلقه پیاز طلایی",
+        "category": "سوخاری و سیب‌زمینی",
+        "badge": "",
+        "description": "پیاز سوخاری حلقه‌ای و ترد",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "special-fries",
+        "name": "سیب‌زمینی ویژه کاکتوس",
+        "category": "سوخاری و سیب‌زمینی",
+        "badge": "",
+        "description": "سیب‌زمینی سوخاری ویژه",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "double-crunch",
+        "name": "کرانچ دوتایی",
+        "category": "سوخاری و سیب‌زمینی",
+        "badge": "",
+        "description": "دو تکه مرغ سوخاری، دو نوع سس مخصوص کاکتوس، سالاد کلم و بروتچن",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "triple-crunch",
+        "name": "کرانچ سه‌تایی",
+        "category": "سوخاری و سیب‌زمینی",
+        "badge": "",
+        "description": "سه تکه مرغ سوخاری، دو نوع سس مخصوص کاکتوس، سالاد کلم و بروتچن",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "caesar-salad",
+        "name": "سالاد سزار کاکتوس",
+        "category": "پیش‌غذا و کنارغذا",
+        "badge": "",
+        "description": "کاهو، گوجه گیلاسی، زیتون، نان سیر، فیله سوخاری، سس سزار و میوه فصل",
+        "price": null,
+        "image": ""
+    },
+    {
+        "id": "garlic-bread",
+        "name": "نان سیر سبز",
+        "category": "پیش‌غذا و کنارغذا",
+        "badge": "",
+        "description": "نان تست برشته با سیر، ریحان، جعفری، فلفل و کره",
+        "price": null,
+        "image": ""
+    }
+]

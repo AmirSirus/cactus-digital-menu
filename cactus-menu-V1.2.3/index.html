@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07130e" />
+    <meta name="description" content="منوی دیجیتال فست‌فود کاکتوس؛ برگر، پیتزا، ساندویچ و نوشیدنی با طراحی مدرن." />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph: بهبود اشتراک‌گذاری در شبکه‌های اجتماعی -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="کاکتوس | منوی دیجیتال فست‌فود" />
+    <meta property="og:description" content="فست‌فود مدرن، لوکس و اشتهابرانگیز." />
+
+    <title>کاکتوس | منوی دیجیتال فست‌فود</title>
+
+    <!-- فونت فارسی؛ display=swap برای جلوگیری از پرش متن هنگام لود -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- داده ساختاریافته برای موتور جستجو (Rich Result) -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "کاکتوس",
+    "servesCuisine": "فست‌فود",
+    "telephone": "+98-000-000-0000",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "تهران",
+      "addressCountry": "IR"
+    }
+  }
+  </script>
+</head>
+
+<body>
+    <!-- دسترس‌پذیری: پرش سریع به محتوای اصلی برای کاربران کیبورد/اسکرین‌ریدر -->
+    <a class="skip-link" href="#main-content">رفتن به محتوای اصلی</a>
+
+    <div class="page-shell">
+        <!-- ============ HERO / معرفی برند ============ -->
+        <header class="hero">
+            <div class="brand">
+                <span class="brand__mark" aria-hidden="true">
+                    <img src="assets/logo.svg" alt="" />
+                </span>
+                <div class="brand__text">
+                    <p class="brand__eyebrow">منوی دیجیتال</p>
+                    <h1 class="brand__title">کاکتوس</h1>
+                    <p class="brand__tagline">فست‌فود مدرن، لوکس و اشتهابرانگیز</p>
+                </div>
+            </div>
+
+            <!-- اکشن‌های سریع نسخه‌ی دسکتاپ/هدر -->
+            <nav class="hero__actions" aria-label="ارتباط سریع">
+                <a class="chip chip--ghost" href="tel:+980000000000">تماس</a>
+                <a class="chip chip--ghost" href="https://maps.google.com" target="_blank" rel="noopener">مسیریابی</a>
+                <a class="chip chip--ghost" href="https://instagram.com" target="_blank" rel="noopener">اینستاگرام</a>
+            </nav>
+        </header>
+
+        <!-- ============ محتوای اصلی ============ -->
+        <main id="main-content" class="main-content">
+            <!-- پنل کنترل: جستجو + فیلتر دسته‌بندی -->
+            <section class="control-panel" aria-label="جستجو و فیلتر منو">
+                <div class="search-field">
+                    <span class="search-field__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                            <circle cx="11" cy="11" r="6.5"></circle>
+                            <path d="m16 16 4.25 4.25"></path>
+                        </svg>
+                    </span>
+                    <input id="searchInput" type="search" class="search-field__input"
+                        placeholder="جستجوی غذا، دسته یا توضیحات…" aria-label="جستجو در منو" autocomplete="off" />
+                </div>
+
+                <!-- دکمه‌های فیلتر به‌صورت داینامیک توسط app.js ساخته می‌شوند -->
+                <div id="filters" class="filters" role="group" aria-label="فیلتر دسته‌بندی"></div>
+            </section>
+
+            <!-- پیام وضعیت (تعداد نتایج) — برای اسکرین‌ریدر live است -->
+            <p id="statusMessage" class="status-message" role="status" aria-live="polite"></p>
+
+            <!-- شبکه‌ی کارت‌های منو -->
+            <section id="menuGrid" class="menu-grid" aria-label="آیتم‌های منو"></section>
+
+            <!-- حالت خالی: وقتی نتیجه‌ای پیدا نشود نمایش داده می‌شود -->
+            <div id="emptyState" class="empty-state" hidden>
+                <div class="empty-state__card">
+                    <p class="empty-state__title">موردی پیدا نشد</p>
+                    <p class="empty-state__hint">عبارت جستجو یا فیلتر را تغییر دهید.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- ============ فوتر ============ -->
+        <footer class="site-footer">
+            <p>کاکتوس — فست‌فود مدرن</p>
+            <p class="site-footer__muted">© ۱۴۰۵ تمامی حقوق محفوظ است.</p>
+        </footer>
+    </div>
+
+    <!-- نوار اکشن ثابت پایین صفحه (بهینه برای موبایل) -->
+    <nav class="quick-actions" aria-label="دسترسی سریع">
+        <a class="quick-actions__item quick-actions__item--contact" href="tel:+985155196322"
+            aria-label="تماس با کاکتوس">
+            <span class="quick-actions__icon" aria-hidden="true">
+                <svg class="quick-actions__svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8.01 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92Z" />
+                </svg>
+            </span>
+            <span>تماس</span>
+        </a>
+        <a class="quick-actions__item quick-actions__item--directions"
+            href="https://maps.app.goo.gl/5HXRu2B72ib9f3aPA?g_st=ic" target="_blank" rel="noopener noreferrer"
+            aria-label="مسیریابی به کاکتوس">
+            <span class="quick-actions__icon" aria-hidden="true">
+                <svg class="quick-actions__svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                    <path d="m3 11 18-8-8 18-2-8-8-2Z" />
+                    <path d="m11 13 4-4" />
+                </svg>
+            </span>
+            <span>مسیریابی</span>
+        </a>
+        <a class="quick-actions__item quick-actions__item--instagram"
+            href="https://www.instagram.com/cactus.diner?igsh=Zm91Y2llcGpneXls" target="_blank"
+            rel="noopener noreferrer" aria-label="صفحه اینستاگرام کاکتوس">
+            <span class="quick-actions__icon" aria-hidden="true">
+                <svg class="quick-actions__svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r=".75" fill="currentColor" stroke="none" />
+                </svg>
+            </span>
+            <span>اینستاگرام</span>
+        </a>
+    </nav>
+
+    <!-- دکمه بازگشت به بالا -->
+    <button id="backToTop" class="back-to-top" type="button" aria-label="بازگشت به بالای صفحه">
+        ↑
+    </button>
+
+    <!-- defer: اجرای اسکریپت بعد از پارس HTML، بدون بلاک رندر -->
+    <script src="app.js" defer></script>
+</body>
+
+</html>

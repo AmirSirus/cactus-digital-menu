@@ -1,0 +1,794 @@
+/* =====================================================================
+   Cactus Digital Menu — Stylesheet
+   معماری: Design Tokens (متغیرها) → Base → Layout → Components → Utilities
+   رویکرد: Mobile-first + RTL
+   ===================================================================== */
+
+/* ---------- 1) Design Tokens ----------
+   تغییر پالت/فاصله/فونت را فقط از همین‌جا انجام بده تا کل UI هماهنگ بماند. */
+:root {
+  /* پالت سه‌گانه: Dark Slate به‌عنوان بوم، قرمز برای کنش، سبز به‌عنوان اکسنت */
+  --c-bg-primary: #12161d;
+  --c-bg-top: #171c24;
+  --c-bg-elevated: rgba(18, 22, 29, 0.96);
+  --c-bg: var(--c-bg-primary);
+  --c-surface: #1a1f26;
+  --c-surface-2: #202732;
+  --c-surface-3: #252d38;
+  --c-surface-glass: rgba(29, 36, 46, 0.88);
+
+  /* قرمز: رنگ اصلی عناصر تعاملی و نقاط انرژی */
+  --c-brand-red-deep: #5a1620;
+  --c-brand-red-burgundy: #7f1d2d;
+  --c-brand-red: #d64550;
+  --c-brand-red-bright: #ff8a7d;
+  --c-brand-red-terra: #c86455;
+  --c-brand-red-soft: rgba(214, 69, 80, 0.16);
+  --c-brand-red-glow: rgba(255, 138, 125, 0.26);
+
+  /* سبز: اکسنت محدود برای حس تازگی/کاکتوس */
+  --c-accent-green: #55c98a;
+  --c-accent-green-strong: #2daa70;
+  --c-accent-green-deep: #1f6b4b;
+  --c-accent-green-forest: #173c2d;
+  --c-accent: var(--c-accent-green);
+  --c-accent-strong: var(--c-accent-green-strong);
+  --c-accent-deep: var(--c-accent-green-deep);
+  --c-accent-forest: var(--c-accent-green-forest);
+  --c-mint: #b7f0cb;
+  --c-accent-soft: rgba(85, 201, 138, 0.12);
+  --c-accent-glow: rgba(85, 201, 138, 0.2);
+
+  /* کرم/آیوری: رنگ خوانایی متن‌ها و آیکون‌های اصلی */
+  --c-cream: #fff8ee;
+  --c-cream-muted: #f2e7d8;
+  --c-ivory: #e9ddcf;
+  --c-text: var(--c-cream);
+  --c-text-muted: #c8c4be;
+  --c-text-subtle: #a8a9a7;
+  --c-price: var(--c-brand-red-bright);
+  --c-on-accent: var(--c-cream);
+  --c-on-green: #092016;
+  --c-focus: var(--c-brand-red-bright);
+  --c-border: rgba(242, 231, 216, 0.14);
+  --c-border-strong: rgba(242, 231, 216, 0.3);
+  --c-cream-faint: rgba(255, 248, 238, 0.028);
+  --c-cream-soft: rgba(255, 248, 238, 0.07);
+  --c-cream-line: rgba(255, 248, 238, 0.12);
+  --c-shadow-ink: rgba(3, 5, 8, 0.52);
+  --c-shadow-ink-soft: rgba(3, 5, 8, 0.3);
+
+  /* گرادیانت‌ها؛ تعامل‌ها قرمزند و سبز فقط در هاله‌های ظریف دیده می‌شود */
+  --gradient-brand: linear-gradient(
+    135deg,
+    rgba(214, 69, 80, 0.24) 0%,
+    rgba(32, 39, 50, 0.94) 48%,
+    rgba(85, 201, 138, 0.1) 100%
+  );
+  --gradient-direction: linear-gradient(
+    120deg,
+    var(--c-brand-red-burgundy) 0%,
+    var(--c-brand-red-deep) 54%,
+    var(--c-bg-primary) 100%
+  );
+  --gradient-direction-hover: linear-gradient(
+    120deg,
+    var(--c-brand-red-bright) 0%,
+    var(--c-brand-red) 42%,
+    var(--c-brand-red-burgundy) 100%
+  );
+  --gradient-direction-active: linear-gradient(
+    120deg,
+    var(--c-brand-red-deep) 0%,
+    var(--c-bg-primary) 100%
+  );
+
+  /* تایپوگرافی */
+  --font-base: "Vazirmatn", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fs-sm: 0.85rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 2rem;
+  --lh-tight: 1.4;
+  --lh-body: 1.8;
+  /* فارسی به line-height بازتر نیاز دارد */
+
+  /* فاصله‌گذاری (مقیاس ۴ پایه) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+
+  /* شکل و سایه */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --shadow-card: 0 18px 42px var(--c-shadow-ink), 0 1px 0 var(--c-cream-soft);
+  --shadow-soft: 0 8px 20px var(--c-shadow-ink-soft), 0 1px 0 var(--c-cream-faint);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition: 180ms var(--ease-out);
+  --transition-slow: 320ms var(--ease-out);
+}
+
+/* ---------- 2) Base / Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+  color: var(--c-text);
+  background:
+    radial-gradient(760px 460px at -8% -12%, var(--c-brand-red-soft) 0%, transparent 62%),
+    radial-gradient(980px 620px at 108% 2%, rgba(85, 201, 138, 0.14) 0%, transparent 64%),
+    linear-gradient(180deg, var(--c-bg-top) 0%, var(--c-bg-primary) 58%, #0d1015 100%);
+  min-height: 100vh;
+  padding-bottom: 6rem;
+  /* فضا برای نوار اکشن ثابت */
+}
+
+::selection {
+  background: var(--c-brand-red);
+  color: var(--c-cream);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ---------- 3) Layout ---------- */
+.page-shell {
+  width: min(1100px, 100%);
+  margin-inline: auto;
+  padding: var(--space-5) var(--space-4);
+}
+
+.main-content {
+  margin-top: var(--space-5);
+}
+
+/* ---------- 4) Components ---------- */
+
+/* --- Hero / Brand --- */
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 0% 0%, var(--c-brand-red-soft), transparent 46%),
+    radial-gradient(circle at 100% 100%, rgba(85, 201, 138, 0.08), transparent 52%),
+    linear-gradient(160deg, var(--c-surface-2), var(--c-surface));
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.hero::after {
+  position: absolute;
+  inset-block-end: -5rem;
+  inset-inline-start: 28%;
+  width: 18rem;
+  height: 10rem;
+  border-radius: 50%;
+  background: linear-gradient(90deg, rgba(85, 201, 138, 0.08), var(--c-brand-red-soft));
+  filter: blur(34px);
+  content: "";
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.brand__mark {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 4.25rem;
+  height: 3.25rem;
+  padding: var(--space-2);
+  overflow: hidden;
+  background: var(--gradient-brand);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 18px rgba(3, 5, 8, 0.28), inset 0 1px 0 var(--c-cream-soft);
+}
+
+.brand__mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand__eyebrow {
+  color: var(--c-mint);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.04em;
+}
+
+.brand__title {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  line-height: var(--lh-tight);
+}
+
+.brand__tagline {
+  color: var(--c-text-muted);
+  font-size: var(--fs-sm);
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+/* --- Chip (دکمه‌های ارتباط) --- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-4);
+  border-radius: 999px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.chip--ghost {
+  border: 1px solid var(--c-border);
+  background: var(--c-cream-faint);
+  color: var(--c-cream-muted);
+}
+
+.chip--ghost:hover {
+  background: linear-gradient(135deg, var(--c-brand-red-soft), rgba(90, 22, 32, 0.72));
+  border-color: var(--c-brand-red);
+  color: var(--c-cream);
+  transform: translateY(-1px);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--c-focus);
+  outline-offset: 2px;
+}
+
+/* --- Control Panel (جستجو + فیلتر) --- */
+.control-panel {
+  display: grid;
+  gap: var(--space-4);
+  margin-block: var(--space-5);
+}
+
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background:
+    linear-gradient(120deg, rgba(214, 69, 80, 0.06), transparent 42%),
+    var(--c-surface-glass);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 1px 0 var(--c-cream-faint);
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.search-field:focus-within {
+  border-color: var(--c-brand-red);
+  background:
+    linear-gradient(120deg, var(--c-brand-red-soft), rgba(32, 39, 50, 0.72)),
+    var(--c-surface);
+  box-shadow:
+    0 0 0 3px rgba(214, 69, 80, 0.16),
+    0 0 0 5px rgba(255, 138, 125, 0.08),
+    0 10px 26px var(--c-shadow-ink-soft);
+}
+
+.search-field__icon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--c-brand-red-bright);
+  opacity: 0.9;
+}
+
+.search-field__icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.search-field__input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--c-text);
+  font: inherit;
+}
+
+.search-field__input:focus {
+  outline: none;
+}
+
+.search-field__input::placeholder {
+  color: var(--c-text-muted);
+}
+
+/* --- Filters --- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.filter-btn {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  background: var(--c-surface);
+  color: var(--c-text-muted);
+  font: inherit;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.filter-btn:hover {
+  color: var(--c-text);
+  border-color: var(--c-brand-red);
+  background: var(--c-brand-red-soft);
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid var(--c-focus);
+  outline-offset: 2px;
+}
+
+/* دسته‌ی فعال: تضاد بالا برای مشخص‌بودن انتخاب */
+.filter-btn.is-active {
+  background: linear-gradient(
+    135deg,
+    var(--c-brand-red-bright),
+    var(--c-brand-red) 58%,
+    var(--c-brand-red-burgundy)
+  );
+  color: var(--c-on-accent);
+  border-color: transparent;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(42, 9, 14, 0.38), 0 0 0 1px rgba(255, 138, 125, 0.2);
+}
+
+/* --- Status message --- */
+.status-message {
+  color: var(--c-text-subtle);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-3);
+}
+
+/* --- Menu grid + cards --- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+
+.menu-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition), border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.menu-card::before {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 1rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--c-brand-red), var(--c-accent));
+  content: "";
+  opacity: 0.72;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(214, 69, 80, 0.56);
+  box-shadow: 0 18px 38px var(--c-shadow-ink), 0 0 0 1px var(--c-brand-red-glow);
+}
+
+.menu-card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: var(--c-surface-3);
+}
+
+.menu-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-card__media img.menu-card__image--placeholder {
+  padding: clamp(1.25rem, 5vw, 2rem);
+  object-fit: contain;
+  background: radial-gradient(circle at 50% 0%, var(--c-brand-red-soft), transparent 60%);
+}
+
+.menu-card__badge {
+  position: absolute;
+  inset-block-start: var(--space-3);
+  inset-inline-end: var(--space-3);
+  padding: var(--space-1) var(--space-3);
+  background: linear-gradient(135deg, rgba(75, 23, 32, 0.96), rgba(201, 79, 90, 0.34));
+  border: 1px solid var(--c-brand-red-terra);
+  box-shadow: 0 6px 16px rgba(27, 8, 11, 0.32), inset 0 1px 0 rgba(255, 248, 238, 0.1);
+  color: var(--c-cream);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+.menu-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  flex: 1;
+}
+
+.menu-card__title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+}
+
+.menu-card__category {
+  color: var(--c-accent);
+  font-size: var(--fs-sm);
+}
+
+.menu-card__description {
+  color: var(--c-text-muted);
+  font-size: var(--fs-sm);
+  flex: 1;
+}
+
+.menu-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--c-border);
+}
+
+.menu-card__price {
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  color: var(--c-price);
+}
+
+.menu-card__price small {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--c-text-muted);
+}
+
+/* --- Empty state --- */
+.empty-state {
+  margin-top: var(--space-6);
+  text-align: center;
+}
+
+.empty-state__card {
+  display: inline-block;
+  padding: var(--space-6);
+  background: var(--c-surface);
+  border: 1px dashed var(--c-border);
+  border-radius: var(--radius-md);
+}
+
+.empty-state__title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+
+.empty-state__hint {
+  color: var(--c-text-muted);
+  font-size: var(--fs-sm);
+  margin-top: var(--space-2);
+}
+
+/* --- Footer --- */
+.site-footer {
+  margin-top: var(--space-6);
+  padding: var(--space-5);
+  text-align: center;
+  border-top: 1px solid var(--c-border);
+}
+
+.site-footer__muted {
+  color: var(--c-text-muted);
+  font-size: var(--fs-sm);
+}
+
+/* --- Quick actions (نوار ثابت پایین) --- */
+.quick-actions {
+  position: fixed;
+  inset-inline: 0;
+  inset-block-end: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-1);
+  padding: var(--space-2);
+  background: var(--c-bg-elevated);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--c-border);
+  box-shadow: 0 -10px 28px var(--c-shadow-ink-soft), 0 -1px 0 var(--c-cream-faint);
+  z-index: 20;
+}
+
+.quick-actions__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 3.75rem;
+  padding: var(--space-1) var(--space-2);
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: var(--c-cream-faint);
+  box-shadow: inset 0 1px 0 var(--c-cream-faint);
+  color: var(--c-text-muted);
+  font-size: var(--fs-sm);
+  transition: color var(--transition), background var(--transition), border-color var(--transition),
+    box-shadow var(--transition), transform var(--transition);
+}
+
+.quick-actions__item:hover,
+.quick-actions__item:focus-visible {
+  color: var(--quick-action-color);
+  background: var(--quick-action-surface);
+  border-color: var(--quick-action-border);
+  box-shadow: var(--quick-action-shadow);
+  transform: translateY(-2px);
+}
+
+.quick-actions__item:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.quick-actions__item:focus-visible {
+  outline: 2px solid var(--c-focus);
+  outline-offset: 2px;
+}
+
+.quick-actions__icon {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: var(--quick-action-icon-surface, var(--c-cream-soft));
+  border: 1px solid var(--quick-action-icon-border, var(--c-cream-line));
+  border-radius: 50%;
+  box-shadow: inset 0 1px 0 var(--c-cream-line);
+  transition: background var(--transition), border-color var(--transition), box-shadow var(--transition),
+    transform var(--transition);
+}
+
+.quick-actions__svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.quick-actions__item:hover .quick-actions__icon,
+.quick-actions__item:focus-visible .quick-actions__icon {
+  background: var(--quick-action-icon-surface-hover, var(--quick-action-icon-surface));
+  border-color: var(--quick-action-icon-border-hover, var(--quick-action-icon-border));
+  box-shadow: 0 5px 14px var(--c-shadow-ink-soft), inset 0 1px 0 rgba(255, 248, 238, 0.14);
+  transform: scale(1.04);
+}
+
+.quick-actions__item--contact {
+  --quick-action-color: var(--c-brand-red-bright);
+  --quick-action-surface: linear-gradient(135deg, rgba(214, 69, 80, 0.2), var(--c-brand-red-deep));
+  --quick-action-border: rgba(214, 69, 80, 0.42);
+  --quick-action-shadow: 0 10px 22px rgba(42, 9, 14, 0.34), 0 0 0 1px rgba(214, 69, 80, 0.12);
+  --quick-action-icon-surface: rgba(214, 69, 80, 0.12);
+  --quick-action-icon-surface-hover: rgba(214, 69, 80, 0.22);
+  --quick-action-icon-border: rgba(214, 69, 80, 0.22);
+  --quick-action-icon-border-hover: rgba(255, 138, 125, 0.44);
+}
+
+.quick-actions__item--instagram {
+  --quick-action-color: var(--c-brand-red-bright);
+  --quick-action-surface: linear-gradient(135deg, rgba(255, 138, 125, 0.18), var(--c-brand-red-deep));
+  --quick-action-border: var(--c-brand-red);
+  --quick-action-shadow: 0 10px 22px rgba(42, 9, 14, 0.36), 0 0 0 1px rgba(214, 69, 80, 0.12);
+  --quick-action-icon-surface: rgba(214, 69, 80, 0.12);
+  --quick-action-icon-surface-hover: rgba(214, 69, 80, 0.22);
+  --quick-action-icon-border: rgba(214, 69, 80, 0.22);
+  --quick-action-icon-border-hover: rgba(255, 138, 125, 0.44);
+}
+
+.quick-actions__item--directions {
+  --quick-action-color: var(--c-cream);
+  --quick-action-surface: var(--gradient-direction);
+  --quick-action-surface-hover: var(--gradient-direction-hover);
+  --quick-action-surface-active: var(--gradient-direction-active);
+  --quick-action-border: rgba(210, 119, 98, 0.7);
+  --quick-action-border-hover: var(--c-brand-red-bright);
+  --quick-action-shadow: 0 12px 26px rgba(3, 5, 8, 0.48), 0 0 24px var(--c-brand-red-glow),
+    0 0 0 1px rgba(214, 69, 80, 0.2);
+  --quick-action-icon-surface: rgba(255, 248, 238, 0.1);
+  --quick-action-icon-surface-hover: rgba(255, 248, 238, 0.18);
+  --quick-action-icon-border: rgba(240, 223, 208, 0.2);
+  --quick-action-icon-border-hover: rgba(255, 248, 238, 0.46);
+  background: var(--quick-action-surface);
+  border-color: var(--quick-action-border);
+  box-shadow: inset 0 1px 0 rgba(255, 248, 238, 0.12), var(--quick-action-shadow);
+  color: var(--quick-action-color);
+  font-weight: 700;
+  transition: color var(--transition), background var(--transition-slow), border-color var(--transition),
+    box-shadow var(--transition), transform var(--transition);
+}
+
+.quick-actions__item--directions:hover,
+.quick-actions__item--directions:focus-visible {
+  background: var(--quick-action-surface-hover);
+  border-color: var(--quick-action-border-hover);
+  box-shadow: var(--quick-action-shadow);
+}
+
+.quick-actions__item--directions:active {
+  background: var(--quick-action-surface-active);
+  border-color: var(--c-brand-red-terra);
+  box-shadow: inset 0 2px 7px rgba(3, 5, 8, 0.42), 0 0 0 1px rgba(214, 69, 80, 0.16);
+}
+
+/* --- Back to top --- */
+.back-to-top {
+  position: fixed;
+  inset-block-end: 5rem;
+  inset-inline-start: var(--space-4);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--c-brand-red-bright), var(--c-brand-red) 62%, var(--c-brand-red-deep));
+  box-shadow: 0 8px 20px rgba(42, 9, 14, 0.38), 0 0 0 1px rgba(255, 138, 125, 0.22);
+  color: var(--c-cream);
+  font-size: 1.25rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+  z-index: 20;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ---------- 5) Utilities ---------- */
+
+/* لینک پرش (فقط هنگام focus دیده می‌شود) */
+.skip-link {
+  position: absolute;
+  inset-block-start: -100px;
+  inset-inline-start: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  background: linear-gradient(110deg, var(--c-brand-red-bright), var(--c-brand-red) 56%, var(--c-brand-red-deep));
+  color: var(--c-cream);
+  border-radius: var(--radius-sm);
+  z-index: 100;
+  transition: inset-block-start var(--transition);
+}
+
+.skip-link:focus {
+  inset-block-start: var(--space-4);
+}
+
+/* پنهان از دید اما قابل‌خواندن برای اسکرین‌ریدر */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- 6) Responsive ---------- */
+@media (min-width: 768px) {
+  .brand__title {
+    font-size: 2.5rem;
+  }
+
+  .quick-actions {
+    inset-inline: 0;
+    width: max-content;
+    margin-inline: auto;
+    border: 1px solid var(--c-border);
+    border-radius: 999px;
+  }
+
+  .quick-actions__item {
+    flex-direction: row;
+    min-height: auto;
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .quick-actions__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  body {
+    padding-bottom: 6.5rem;
+  }
+
+  .back-to-top {
+    inset-block-end: 6.75rem;
+  }
+}
+
+/* ---------- 7) Motion preference ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

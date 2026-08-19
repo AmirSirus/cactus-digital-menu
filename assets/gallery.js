@@ -1,14 +1,11 @@
 const prototypes = [
-    { id: 'claude-0', label: 'منوی اول', family: 'Claude', path: 'claude-0/', title: 'منوی دیجیتال | فست‌فود کاکتوس' },
-    { id: 'claude-1', label: 'منوی دوم', family: 'Claude', path: 'claude-1/', title: 'کاکتوس | منوی دیجیتال فست‌فود' },
-    { id: 'claude-2', label: 'منوی سوم', family: 'Claude', path: 'claude-2/', title: 'منوی دیجیتال کاکتوس | Cactus Fast Food' },
-    { id: 'gpt-0', label: 'منوی چهارم', family: 'GPT', path: 'gpt-0/', title: 'منوی دیجیتال فست‌فود' },
-    { id: 'gpt-1', label: 'منوی پنجم', family: 'GPT', path: 'gpt-1/', title: 'منوی دیجیتال کاکتوس | Cactus Fast Food' },
-    { id: 'gpt-2', label: 'منوی شیشم', family: 'GPT', path: 'gpt-2/', title: 'کاکتوس | منوی دیجیتال فست‌فود' },
-    { id: 'gemini', label: 'منوی هفتم', family: 'Google', path: 'gemini/', title: 'منوی دیجیتال فست‌فود' },
-    { id: 'p-c01', label: 'منوی هشتم', family: 'Pre-Beta-claude', path: 'pre-beta/claude-0.1/', title: 'منوی دیجیتال | فست‌فود کاکتوس' },
-    { id: 'p-c11', label: 'منوی نهم', family: 'Pre-Beta-claude', path: 'pre-beta/claude-1.1/', title: 'کاکتوس | منوی دیجیتال فست‌فود' },
-    { id: 'p-c12', label: 'منوی دهم', family: 'Pre-Beta-claude', path: 'pre-beta/claude-1.2/', title: 'کاکتوس | منوی دیجیتال فست‌فود' },
+    { id: 'menu-1', label: 'منوی اول', family: 'white', path: 'cactus-menu/', title: 'منوی دیجیتال | فست‌فود کاکتوس' },
+    { id: 'menu-2', label: 'منوی دوم', family: 'green', path: 'cactus-menu-V1.1/', title: 'کاکتوس | منوی دیجیتال فست‌فود' },
+    { id: 'menu-3', label: 'منوی سوم', family: 'green', path: 'cactus-menu-V1.2/', title: 'منوی دیجیتال کاکتوس | Cactus Fast Food' },
+    { id: 'menu-4', label: 'منوی چهارم', family: 'red+green', path: 'cactus-menu-V1.2.1/', title: 'منوی دیجیتال فست‌فود' },
+    { id: 'menu-5', label: 'منوی پنجم', family: 'red+green', path: 'cactus-menu-V1.2.2/', title: 'منوی دیجیتال کاکتوس | Cactus Fast Food' },
+    { id: 'menu-6', label: 'منوی شیشم', family: 'red+green+dark', path: 'cactus-menu-V1.2.3/', title: 'کاکتوس | منوی دیجیتال فست‌فود' },
+    { id: 'menu-7', label: 'منوی هفتم', family: 'red+green+dark', path: 'cactus-menu-V1.3/', title: 'منوی دیجیتال فست‌فود' },
 ];
 
 const grid = document.getElementById('grid');

@@ -1,0 +1,837 @@
+/* =============================================================
+   Cactus Digital Menu — style.css
+   ساختار:
+   0. FONTS (Self-host)
+   1. Design Tokens (:root)
+   2. Reset & Base
+   3. Layout Shell
+   4. Hero & Brand
+   5. Controls (search / filters / status)
+   6. Menu Grid & Cards
+   7. Empty State
+   8. Footer
+   9. Fixed UI (quick-actions / back-to-top)
+   10. Utilities
+   11. Responsive (breakpoints)
+   12. Motion Preferences
+   ============================================================= */
+
+/* ============ 0. FONTS (Self-host) ============ */
+@font-face {
+    font-family: "Vazirmatn";
+    src: url("./assets/fonts/Vazirmatn-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Vazirmatn";
+    src: url("./assets/fonts/Vazirmatn-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Vazirmatn";
+    src: url("./assets/fonts/Vazirmatn-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ------------------------------------------------------------
+   1. Design Tokens
+   ------------------------------------------------------------ */
+:root {
+  /* Surfaces & background */
+  --ink: #090c09;
+  --bg: #090c09;
+  --bg-elevated: #121611;
+  --surface: rgba(17, 22, 17, 0.9);
+  --surface-strong: #151a14;
+  --surface-soft: rgba(247, 238, 219, 0.05);
+
+  /* Borders */
+  --border: rgba(247, 238, 219, 0.12);
+  --border-strong: rgba(247, 238, 219, 0.2);
+
+  /* Text */
+  --white: #fffdf8;
+  --cream: #f7eedb;
+  --text: var(--cream);
+  --muted: #c9bda5;
+  --muted-2: #9a8e7b;
+
+  /* Accent (brand red) */
+  --accent: #d94a43;
+  --accent-2: #f07266;
+  --accent-3: #872118;
+  --accent-soft: rgba(217, 74, 67, 0.16);
+
+  /* Complementary green */
+  --green: #4f9562;
+  --green-2: #8ac28e;
+  --green-a10: rgba(79, 149, 98, 0.1);
+  --green-a14: rgba(79, 149, 98, 0.14);
+  --green-a22: rgba(79, 149, 98, 0.22);
+  --green-a40: rgba(79, 149, 98, 0.4);
+
+  /* Accent alpha steps — پیش‌تر به‌صورت hardcode تکرار می‌شدند */
+  --accent-a10: rgba(217, 74, 67, 0.10);
+  --accent-a12: rgba(217, 74, 67, 0.12);
+  --accent-a14: rgba(217, 74, 67, 0.14);
+  --accent-a18: rgba(217, 74, 67, 0.18);
+  --accent-a26: rgba(217, 74, 67, 0.26);
+  --accent-a35: rgba(217, 74, 67, 0.35);
+  --accent-a42: rgba(217, 74, 67, 0.42);
+  --accent-a44: rgba(217, 74, 67, 0.44);
+  --accent-a50: rgba(217, 74, 67, 0.50);
+  --accent-a55: rgba(217, 74, 67, 0.55);
+  --accent-a58: rgba(217, 74, 67, 0.58);
+
+  /* Heading / lead accents */
+  --heading: var(--white);
+  --subtitle: #d9cbb3;
+  --lead: #ead9bc;
+
+  /* Shadows */
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.26);
+
+  /* Radii */
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+
+  /* Layout & motion */
+  --container: 1180px;
+  --transition: 180ms ease;
+}
+
+/* ------------------------------------------------------------
+   2. Reset & Base
+   ------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 14% 0%, var(--green-a14), transparent 28%),
+    radial-gradient(circle at 86% 0%, var(--accent-a14), transparent 30%),
+    linear-gradient(180deg, #0d110d 0%, var(--ink) 100%);
+  color: var(--text);
+  font-family: Vazirmatn, "Segoe UI", sans-serif;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: calc(92px + env(safe-area-inset-bottom));
+}
+
+/* یک تعریف واحد فونت برای همه‌ی کنترل‌ها — تکرار قبلی حذف شد */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(247, 238, 219, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247, 238, 219, 0.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 82%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ------------------------------------------------------------
+   3. Layout Shell
+   ------------------------------------------------------------ */
+.skip-link {
+  position: absolute;
+  inset-inline-start: 16px;
+  top: -60px;
+  z-index: 50;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--white);
+  transition: top var(--transition);
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+.page-shell {
+  width: min(100% - 24px, var(--container));
+  margin-inline: auto;
+  padding-top: 16px;
+}
+
+.main-content {
+  display: grid;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+/* ------------------------------------------------------------
+   4. Hero & Brand
+   ------------------------------------------------------------ */
+.hero {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(135deg, var(--green-a10), transparent 42%),
+    linear-gradient(315deg, var(--accent-a12), transparent 45%),
+    linear-gradient(180deg, rgba(22, 27, 21, 0.97), rgba(10, 13, 10, 0.95));
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.brand__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center; /* اضافه شود */
+}
+
+
+.brand__logo {
+  display: block;
+  width: clamp(9.5rem, 18vw, 13rem);
+  max-width: 100%;
+  aspect-ratio: 2439 / 1356;
+  background: linear-gradient(100deg, var(--accent), var(--accent-3));
+  -webkit-mask: url("./assets/logo.svg") no-repeat center / contain;
+  mask: url("./assets/logo.svg") no-repeat center / contain;
+}
+
+.brand__eyebrow {
+  margin: 0 0 2px;
+  color: var(--accent-2);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.brand__subtitle {
+  margin: 6px 0 0;
+  color: var(--subtitle);
+  font-size: 0.95rem;
+}
+
+.hero__panel {
+  display: grid;
+  gap: 14px;
+}
+
+.hero__lead {
+  margin: 0;
+  color: var(--lead);
+  font-size: 0.98rem;
+  font-style: italic;
+}
+
+/* ------------------------------------------------------------
+   5. Controls (search / filters / status)
+   ------------------------------------------------------------ */
+.control-panel {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  background: rgba(15, 19, 14, 0.92);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(14px);
+}
+
+.search-field {
+  position: relative;
+}
+
+.search-field::before {
+  content: "⌕";
+  position: absolute;
+  inset-inline-start: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-2);
+  pointer-events: none;
+}
+
+.search-field input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 46px 0 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface-strong);
+  color: var(--text);
+  outline: none;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    background var(--transition);
+}
+
+.search-field input::placeholder {
+  color: var(--muted-2);
+}
+
+.search-field input:focus {
+  border-color: var(--accent-a55);
+  box-shadow: 0 0 0 4px var(--accent-a12);
+}
+
+.filters-wrap {
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.filters {
+  display: inline-flex;
+  gap: 10px;
+  min-width: 100%;
+}
+
+.filter-btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: rgba(247, 238, 219, 0.035);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 10px 16px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--accent-a44);
+  outline: none;
+}
+
+.filter-btn.is-active {
+  background: linear-gradient(135deg, var(--accent-a26), var(--green-a14));
+  border-color: var(--accent-a58);
+  color: var(--white);
+  box-shadow: 0 10px 24px var(--accent-a18);
+}
+
+.status-message {
+  margin: 0;
+  min-height: 1.5em;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* ------------------------------------------------------------
+   6. Menu Grid & Cards
+   ------------------------------------------------------------ */
+.menu-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.menu-card {
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(23, 28, 22, 0.98), rgba(11, 14, 11, 0.98));
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition),
+    background var(--transition);
+}
+
+.menu-card:hover,
+.menu-card:focus-within {
+  transform: translateY(-2px);
+  border-color: var(--green-a40);
+  background:
+    linear-gradient(135deg, var(--green-a10), transparent 52%),
+    linear-gradient(315deg, var(--accent-a10), transparent 48%),
+    linear-gradient(180deg, rgba(25, 31, 24, 0.99), rgba(11, 14, 11, 0.99));
+  box-shadow:
+    0 18px 38px rgba(0, 0, 0, 0.38),
+    0 0 0 1px var(--accent-a14);
+}
+
+.menu-card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  margin: 0;
+  background:
+    radial-gradient(circle at 20% 20%, var(--green-a14), transparent 52%),
+    radial-gradient(circle at 80% 80%, var(--accent-a14), transparent 54%),
+    linear-gradient(135deg, #1a2018, #0d100d);
+}
+
+.menu-card__media > .menu-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-card__placeholder {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 20% 20%, var(--green-a22), transparent 48%),
+    radial-gradient(circle at 80% 80%, var(--accent-a22), transparent 50%),
+    linear-gradient(135deg, #1b2119, #0b0e0b);
+}
+
+.menu-card__placeholder-logo {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  z-index: 0;
+  width: min(62%, 15rem);
+  height: auto;
+  opacity: 0.3;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.34));
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.menu-card__placeholder-title {
+  position: relative;
+  z-index: 1;
+  max-width: calc(100% - 36px);
+  padding: 8px 14px;
+  border: 1px solid rgba(247, 238, 219, 0.24);
+  border-radius: 999px;
+  background: rgba(9, 12, 9, 0.58);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  color: var(--cream);
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.55;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.menu-card__badge {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 253, 248, 0.24);
+  color: var(--white);
+  font-size: 0.78rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.menu-card__badge--0 {
+  background: linear-gradient(135deg, #e6685e, #a72f38);
+}
+
+.menu-card__badge--1 {
+  background: linear-gradient(135deg, #8fc98d, #397956);
+}
+
+.menu-card__badge--2 {
+  background: linear-gradient(135deg, #f7eedb, #c96559);
+  color: var(--ink);
+}
+
+.menu-card__badge--3 {
+  background: linear-gradient(135deg, #242a20, #6b2029);
+}
+
+.menu-card__body {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+}
+
+.menu-card__title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+}
+
+.menu-card__title {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.menu-card__category {
+  margin: 0;
+  color: var(--muted-2);
+  font-size: 0.84rem;
+}
+
+.menu-card__desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  min-height: 3.5em;
+}
+
+.menu-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-card__price {
+  font-weight: 700;
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.menu-card__price strong {
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+.menu-card__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: var(--cream);
+  background: var(--green-a14);
+  border: 1px solid var(--green-a40);
+  font-size: 0.8rem;
+}
+
+/* ------------------------------------------------------------
+   7. Empty State
+   ------------------------------------------------------------ */
+.empty-state {
+  display: grid;
+  place-items: center;
+  padding: 16px 0 0;
+}
+
+.empty-state__card {
+  width: 100%;
+  padding: 28px 18px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  background: rgba(15, 19, 14, 0.92);
+  text-align: center;
+}
+
+.empty-state__card h2 {
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+}
+
+.empty-state__card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------------------
+   8. Footer
+   ------------------------------------------------------------ */
+.site-footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  margin: 18px 0 0;
+  padding: 18px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  background: rgba(12, 16, 12, 0.88);
+  color: var(--muted);
+}
+
+.site-footer__restaurant {
+  grid-column: 1;
+  justify-self: start;
+  min-width: 0;
+}
+
+.site-footer__credit {
+  grid-column: 2;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.site-footer__title {
+  margin: 0 0 4px;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  grid-column: 3;
+  justify-self: end;
+  color: var(--white);
+}
+
+/* ------------------------------------------------------------
+   9. Fixed UI (quick-actions / back-to-top)
+   ------------------------------------------------------------ */
+.quick-actions {
+  position: fixed;
+  left: 50%;
+  bottom: calc(14px + env(safe-area-inset-bottom));
+  z-index: 30;
+  width: min(100%, 360px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: rgba(9, 12, 9, 0.76);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-soft);
+  transform: translateX(-50%);
+}
+
+.quick-actions__item {
+  display: grid;
+  place-items: center;
+  gap: 4px;
+  padding: 10px 8px;
+  border-radius: 14px;
+  color: var(--text);
+  background: rgba(247, 238, 219, 0.04);
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    color var(--transition);
+}
+
+.quick-actions__item:hover,
+.quick-actions__item:focus-visible {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, var(--accent-a18), var(--green-a14));
+  color: var(--white);
+  outline: none;
+}
+
+.quick-actions__icon {
+  display: grid;
+  place-items: center;
+  color: var(--green-2);
+  line-height: 1;
+}
+
+.quick-actions__icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.back-to-top {
+  position: fixed;
+  inset-inline-end: 14px;
+  bottom: calc(18px + env(safe-area-inset-bottom));
+  z-index: 31;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: rgba(9, 12, 9, 0.95);
+  color: var(--white);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  box-shadow: var(--shadow-soft);
+  transition:
+    opacity var(--transition),
+    transform var(--transition),
+    border-color var(--transition),
+    background var(--transition);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  border-color: var(--green-a40);
+  background: linear-gradient(135deg, var(--accent-a14), var(--green-a14));
+  outline: none;
+}
+
+/* ------------------------------------------------------------
+   10. Utilities
+   ------------------------------------------------------------ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ------------------------------------------------------------
+   11. Responsive (breakpoints)
+   ------------------------------------------------------------ */
+@media (min-width: 560px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero {
+    padding: 22px;
+  }
+
+  .control-panel {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 559px) {
+  .site-footer {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .site-footer__restaurant {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .site-footer__credit {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  .site-footer a {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .back-to-top {
+    bottom: calc(104px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (min-width: 900px) {
+  body {
+    padding-bottom: calc(92px + env(safe-area-inset-bottom));
+  }
+
+  .page-shell {
+    padding-top: 22px;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.82fr) minmax(0, 1fr);
+    align-items: center;
+    padding: 24px;
+  }
+
+  .hero__panel {
+    grid-column: 3;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .quick-actions {
+    width: min(100%, 340px);
+  }
+
+  .back-to-top {
+    inset-inline-end: calc((100vw - min(100% - 24px, var(--container))) / 2);
+  }
+}
+
+/* ------------------------------------------------------------
+   12. Motion Preferences
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

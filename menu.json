@@ -3,352 +3,352 @@
         "id": "juicy-burger",
         "name": "جوسی برگر",
         "category": "برگرها",
-        "badge": "",
+        "badge": "آبدار",
         "description": "بیف‌ برگر، کاهو، گوجه، خیارشور، سس پیاز و پنیر چدار",
         "price": 420000,
-        "image": ""
+        "image": "assets/images/juicy-burger.webp"
     },
     {
         "id": "mushroom-burger",
         "name": "ماشروم برگر",
         "category": "برگرها",
-        "badge": "",
+        "badge": "پرطرفدار",
         "description": "بیف‌برگر، کاهو، گوجه، خیارشور، سس قارچ و پنیر چدار",
         "price": 460000,
-        "image": ""
-    },
-    {
-        "id": "smoky-burger",
-        "name": "اسموکی برگر",
-        "category": "برگرها",
-        "badge": "",
-        "description": "بیف‌ برگر، کاهو، گوجه، خیارشور، سس باربیکیو و پنیر چدار",
-        "price": 380000,
-        "image": ""
+        "image": "assets/images/mushroom-burger.webp"
     },
     {
         "id": "mega-burger",
         "name": "مگابرگر",
         "category": "برگرها",
-        "badge": "",
+        "badge": "سیرکننده",
         "description": "بیف‌ برگر، کاهو، گوجه، خیارشور، پیاز سوخاری و سس مخصوص کاکتوس",
         "price": 410000,
-        "image": ""
+        "image": "assets/images/mega-burger.webp"
     },
     {
-        "id": "zinger-burger",
-        "name": "زینگر برگر",
+        "id": "smoky-burger",
+        "name": "اسموکی برگر",
         "category": "برگرها",
-        "badge": "",
-        "description": "فیله یا شنیسل مرغ، کاهو، گوجه، خیارشور، پنیر چدار و سس مخصوص کاکتوس",
-        "price": 340000,
-        "image": ""
+        "badge": "دودی",
+        "description": "بیف‌ برگر، کاهو، گوجه، خیارشور، سس باربیکیو و پنیر چدار",
+        "price": 380000,
+        "image": "assets/images/smoky-burger.webp"
     },
     {
         "id": "jalapeno-burger",
         "name": "هالوپینو برگر",
         "category": "برگرها",
-        "badge": "",
+        "badge": "آتیشی و تند",
         "description": "بیف‌برگر، کاهو، گوجه، خیارشور، هالوپینو، پنیر چدار و سس مخصوص کاکتوس",
         "price": 430000,
-        "image": ""
+        "image": "assets/images/jalapeno-burger.webp"
+    },
+    {
+        "id": "zinger-burger",
+        "name": "زینگر برگر",
+        "category": "برگرها",
+        "badge": "پرطرفدار",
+        "description": "فیله یا شنیسل مرغ، کاهو، گوجه، خیارشور، پنیر چدار و سس مخصوص کاکتوس",
+        "price": 340000,
+        "image": "assets/images/zinger-burger.webp"
     },
     {
         "id": "spin-burger",
         "name": "اسپین برگر",
         "category": "برگرها",
-        "badge": "",
+        "badge": "اقتصادی",
         "description": "بیف‌برگر، کاهو، گوجه، خیارشور، پنیر چدار و سس مخصوص کاکتوس",
         "price": 390000,
-        "image": ""
+        "image": "assets/images/spin-burger.webp"
     },
     {
         "id": "double-burger",
         "name": "دوبل برگر",
         "category": "برگرها",
-        "badge": "",
+        "badge": "دوبل",
         "description": "دو بیف‌برگر، کاهو، گوجه، خیارشور، دو لایه پنیر چدار و سس مخصوص کاکتوس",
         "price": 600000,
-        "image": ""
+        "image": "assets/images/double-burger.webp"
     },
     {
         "id": "king-burger",
         "name": "کینگ‌برگر",
         "category": "برگرها",
-        "badge": "",
+        "badge": "ویژه",
         "description": "دو بیف‌برگر، دو تکه ژامبون گوشت سرخ‌شده، کاهو، گوجه، خیارشور، پنیر چدار و سس مخصوص کاکتوس",
         "price": 670000,
-        "image": ""
+        "image": "assets/images/king-burger.webp"
     },
     {
-        "id": "mega-zinger",
-        "name": "مگا زینگر کاکتوس",
+        "id": "mega-zinger-burger",
+        "name": "مگا زینگر برگر",
         "category": "برگرها",
-        "badge": "",
+        "badge": "دوبل مرغ",
         "description": "دو فیله سوخاری، کاهو، گوجه، خیارشور، دو لایه پنیر چدار و سس مخصوص کاکتوس",
         "price": 550000,
-        "image": ""
+        "image": "assets/images/mega-zinger-burger.webp"
     },
     {
         "id": "chicken-alfredo-pasta",
         "name": "پاستا مرغ آلفردو",
         "category": "پاستا",
-        "badge": "",
+        "badge": "خامه‌ای",
         "description": "پاستا به‌همراه مرغ و سس خامه‌ای آلفردو",
         "price": 400000,
-        "image": ""
+        "image": "assets/images/chicken-alfredo-pasta.webp"
     },
     {
         "id": "chicken-pesto-pasta",
         "name": "پاستا مرغ پستو",
         "category": "پاستا",
-        "badge": "",
+        "badge": "پستو",
         "description": "پاستا به‌همراه مرغ و سس پستو",
         "price": 420000,
-        "image": ""
+        "image": "assets/images/chicken-pesto-pasta.webp"
     },
     {
         "id": "beef-alfredo-pasta",
         "name": "پاستا گوشت آلفردو",
         "category": "پاستا",
-        "badge": "",
+        "badge": "به‌زودی",
         "description": "پاستا به‌همراه گوشت و سس خامه‌ای آلفردو",
         "price": 0,
-        "image": ""
+        "image": "assets/images/chicken-alfredo-pasta.webp"
     },
     {
         "id": "special-pizza",
         "name": "پیتزا مخصوص کاکتوس",
         "category": "پیتزا",
-        "badge": "",
+        "badge": "پیشنهاد سرآشپز",
         "description": "سس گوجه، گوشت چرخ‌کرده، ژامبون مرغ و گوشت، قارچ، پنیر پیتزا، فلفل دلمه‌ای، ذرت و زیتون",
         "price": 550000,
-        "image": ""
+        "image": "assets/images/special-pizza.webp"
     },
     {
         "id": "chicken-pizza",
         "name": "پیتزا چیکن",
         "category": "پیتزا",
-        "badge": "",
+        "badge": "پرطرفدار",
         "description": "سس گوجه، مرغ نگینی، قارچ، پنیر پیتزا، فلفل دلمه‌ای، ذرت و زیتون",
         "price": 620000,
-        "image": ""
+        "image": "assets/images/chicken-pizza.webp"
     },
     {
         "id": "steak-pizza",
         "name": "پیتزا سیر استیک ",
         "category": "پیتزا",
-        "badge": "",
+        "badge": "لوکس",
         "description": "سس سیر، گوشت رست ورقه‌ای، قارچ، پنیر پیتزا و زیتون",
         "price": 1000000,
-        "image": ""
+        "image": "assets/images/steak-pizza.webp"
     },
     {
         "id": "pepperoni-pizza",
         "name": "پیتزا پپرونی",
         "category": "پیتزا",
-        "badge": "",
+        "badge": "کلاسیک",
         "description": "سس گوجه، پپرونی، قارچ، پنیر پیتزا و فلفل دلمه‌ای",
         "price": 570000,
-        "image": ""
+        "image": "assets/images/pepperoni-pizza.webp"
     },
     {
         "id": "four-flavors-pizza",
         "name": "پیتزا چهار فصل",
         "category": "پیتزا",
-        "badge": "",
+        "badge": "چهار طعم",
         "description": "ترکیبی از چهار طعم پپرونی، استیک، مخصوص و مرغ",
         "price": 720000,
-        "image": ""
+        "image": "assets/images/four-flavors-pizza.webp"
     },
     {
         "id": "greek-pizza",
         "name": "پیتزا یونانی",
         "category": "پیتزا",
-        "badge": "",
+        "badge": "یونانی",
         "description": "سس گوجه، مرغ، ژامبون مرغ، قارچ، پنیر پیتزا، فلفل دلمه‌ای و گوجه",
         "price": 590000,
-        "image": ""
+        "image": "assets/images/greek-pizza.webp"
     },
     {
         "id": "roast-beef-pizza",
         "name": "پیتزا رست‌بیف",
         "category": "پیتزا",
-        "badge": "",
+        "badge": "رست‌بیف",
         "description": "سس گوجه، گوشت رست ریش‌ریش، قارچ، پنیر پیتزا و فلفل دلمه‌ای",
         "price": 750000,
-        "image": ""
+        "image": "assets/images/roast-beef-pizza.webp"
     },
     {
         "id": "quad-fillet",
         "name": "فیله چهارتایی کاکتوس",
         "category": "سوخاری و سیب‌زمینی",
-        "badge": "",
+        "badge": "چهارتکه",
         "description": "چهار تکه فیله سوخاری، سه سس مخصوص کاکتوس، سالاد کلم و بروتچن",
         "price": 450000,
-        "image": ""
+        "image": "assets/images/fillets.webp"
     },
     {
         "id": "hex-fillet",
         "name": "فیله شش‌ تایی کاکتوس",
         "category": "سوخاری و سیب‌زمینی",
-        "badge": "",
+        "badge": "شش‌تکه",
         "description": "شش تکه فیله سوخاری، چهار سس مخصوص کاکتوس، سالاد کلم و بروتچن",
         "price": 600000,
-        "image": ""
+        "image": "assets/images/fillets.webp"
     },
     {
         "id": "eco-basket",
         "name": "سبد دورهمی کاکتوس",
         "category": "سوخاری و سیب‌زمینی",
-        "badge": "",
+        "badge": "به‌زودی",
         "description": "سه تکه مرغ سوخاری، چهار تکه فیله، سیب‌زمینی، دو نوشابه و دو سالاد",
         "price": 0,
-        "image": ""
+        "image": "assets/images/eco-basket.webp"
     },
     {
         "id": "onion-rings",
         "name": "پیاز سوخاری",
         "category": "سوخاری و سیب‌زمینی",
-        "badge": "",
+        "badge": "ترد",
         "description": "پیاز سوخاری حلقه‌ای و ترد",
         "price": 70000,
-        "image": ""
+        "image": "assets/images/onion-rings.webp"
     },
     {
-        "id": "special-fries",
+        "id": "regular-fries",
         "name": "سیب‌زمینی",
         "category": "سوخاری و سیب‌زمینی",
-        "badge": "",
-        "description": "سیب‌زمینی سوخاری ویژه",
+        "badge": "سیب‌زمینی",
+        "description": "سیب‌زمینی سوخاری ترد و خوش‌طعم، مناسب برای کنار غذا یا سفارش جداگانه.",
         "price": 180000,
-        "image": ""
+        "image": "assets/images/regular-fries.webp"
     },
     {
         "id": "double-crunch",
         "name": "کرانچ دوتایی",
         "category": "سوخاری و سیب‌زمینی",
-        "badge": "",
+        "badge": "دوتایی",
         "description": "دو تکه مرغ سوخاری، دو نوع سس مخصوص کاکتوس، سالاد کلم و بروتچن",
         "price": 360000,
-        "image": ""
+        "image": "assets/images/fillets.webp"
     },
     {
         "id": "triple-crunch",
         "name": "کرانچ سه‌تایی",
         "category": "سوخاری و سیب‌زمینی",
-        "badge": "",
+        "badge": "سه‌تایی",
         "description": "سه تکه مرغ سوخاری، دو نوع سس مخصوص کاکتوس، سالاد کلم و بروتچن",
         "price": 450000,
-        "image": ""
+        "image": "assets/images/fillets.webp"
     },
     {
         "id": "caesar-salad",
         "name": "سالاد سزار کاکتوس",
         "category": "پیش‌غذا و کنارغذا",
-        "badge": "",
+        "badge": "کامل",
         "description": "کاهو، گوجه گیلاسی، زیتون، نان سیر، فیله سوخاری، سس سزار و میوه فصل",
         "price": 200000,
-        "image": ""
+        "image": "assets/images/caesar-salad.webp"
     },
     {
         "id": "garlic-bread",
-        "name": "نان سیر سبز",
+        "name": "نان سیر",
         "category": "پیش‌غذا و کنارغذا",
-        "badge": "",
+        "badge": "به‌زودی",
         "description": "نان تست برشته با سیر، ریحان، جعفری، فلفل و کره",
         "price": 0,
-        "image": ""
+        "image": "assets/images/garlic-bread.webp"
     },
     {
         "id": "garlic-sauce",
         "name": "سس سیر دست ساز کاکتوس",
         "category": "سس های دست ساز",
-        "badge": "",
+        "badge": "دست‌ساز",
         "description": "سس دست ساز و مخصوص کاکتوس با طعم سیر ",
         "price": 30000,
-        "image": ""
+        "image": "assets/images/garlic-sauce.webp"
     },
     {
         "id": "tomato-sauce",
         "name": "سس کچاپ دست ساز کاکتوس",
         "category": "سس های دست ساز",
-        "badge": "",
+        "badge": "دست‌ساز",
         "description": "سس دست ساز و مخصوص کاکتوس با طعم کچاپ ",
         "price": 25000,
-        "image": ""
+        "image": "assets/images/tomato-sauce.webp"
     },
     {
         "id": "tartar-sauce",
         "name": "سس تارتار دست ساز کاکتوس",
         "category": "سس های دست ساز",
-        "badge": "",
+        "badge": "دست‌ساز",
         "description": "سس دست ساز و مخصوص کاکتوس با طعم تارتار ",
         "price": 25000,
-        "image": ""
+        "image": "assets/images/tartar-sauce.webp"
     },
     {
         "id": "canned-drink",
         "name": "نوشیدنی قوطی",
         "category": "نوشیدنی",
-        "badge": "",
+        "badge": "قوطی",
         "description": "نوشیدنی خنک و گازدار قوطی؛ انتخابی سریع و کلاسیک در کنار غذا.",
         "price": 85000,
-        "image": ""
+        "image": "assets/images/canned-drink.webp"
     },
     {
         "id": "lemonade-drink",
         "name": "لیموناد",
         "category": "نوشیدنی",
-        "badge": "",
+        "badge": "لیمویی",
         "description": "ترکیبی خنک و گوارا از لیمو، شیرینی متعادل و حس طراوت‌بخش. ",
         "price": 42000,
-        "image": ""
+        "image": "assets/images/lemonade-drink.webp"
     },
     {
         "id": "sparkling-lemonade-water",
         "name": "آب گازدار",
         "category": "نوشیدنی",
-        "badge": "",
+        "badge": "گازدار",
         "description": "آب معدنی گازدار خنک و سبک؛ مناسب برای همراهی با انواع غذا.",
         "price": 37000,
-        "image": ""
+        "image": "assets/images/sparkling-lemonade-water.webp"
     },
     {
         "id": "watter-drink",
         "name": "آب معدنی",
         "category": "نوشیدنی",
-        "badge": "",
+        "badge": "خنک",
         "price": 25000,
         "description": "آب معدنی خنک و سالم.",
-        "image": ""
+        "image": "assets/images/watter-drink.webp"
     },
     {
         "id": "family-size-lemonade",
         "name": "لیموناد خانواده",
         "category": "نوشیدنی",
-        "badge": "",
+        "badge": "خانوادگی",
         "description": "لیموناد خنک و گوارا در حجم خانواده؛ مناسب برای اشتراک‌گذاری کنار غذا.",
         "price": 85000,
-        "image": ""
+        "image": "assets/images/family-size-lemonade.webp"
     },
     {
         "id": "family-size-soda",
         "name": "نوشابه خانواده",
         "category": "نوشیدنی",
-        "badge": "",
+        "badge": "خانوادگی",
         "description": "نوشابه خنک در حجم خانواده؛ همراه همیشگی سفارش‌های چندنفره.",
         "price": 110000,
-        "image": ""
+        "image": "assets/images/family-size-soda.webp"
     },
     {
         "id": "bottled-lemonade",
         "name": "لیموناد شیشه ای",
         "category": "نوشیدنی",
-        "badge": "",
+        "badge": "شیشه‌ای",
         "description": "لیموناد خنک با طعم لیموی تازه و حس نوستالژیک بطری شیشه‌ای.",
         "price": 72000,
-        "image": ""
+        "image": "assets/images/bottled-lemonade.webp"
     },
     {
         "id": "pet-juice-bottle",
@@ -357,16 +357,16 @@
         "badge": "",
         "description": "آبمیوه خنک و خوش‌طعم؛ انتخابی سبک و دل‌نشین برای همراهی با سفارش شما.",
         "price": 50000,
-        "image": ""
+        "image": "assets/images/pet-juice-bottle.webp"
     },
     {
         "id": "abali-doogh-drink",
         "name": "دوغ آبعلی",
         "category": "نوشیدنی",
-        "badge": "",
+        "badge": "گازدار",
         "description": "دوغ گازدار و شیشه ای آبعلی",
         "price": 70000,
-        "image": ""
+        "image": "assets/images/abali-doogh-drink.webp"
     },
     {
         "id": "buttermilk-drink",
@@ -375,6 +375,6 @@
         "badge": "",
         "description": "دوغ ساده و خنک.",
         "price": 55000,
-        "image": ""
+        "image": "assets/images/buttermilk-drink.webp"
     }                                    
 ]
